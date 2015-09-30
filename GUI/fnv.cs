@@ -53,11 +53,11 @@ namespace QLBanHang
 
                 if (cbbgioitinhnv.Text == "Nam")
                 {
-                    //laydulieu.Gioitinh = Convert.ToString("True");
+                    laydulieu.Gioitinhnv = Convert.ToString("True");
                 }
                 else
                 {
-                    //laydulieu.Gioitinh = Convert.ToString("False");
+                    laydulieu.Gioitinhnv = Convert.ToString("False");
                 }
                 laydulieu.Cmndnv = txtcmndnv.Text;
                 laydulieu.Diachinv = txtdiachinv.Text;

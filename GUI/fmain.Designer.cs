@@ -31,23 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmain));
             this.gbhethong = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.picphanquyen = new System.Windows.Forms.PictureBox();
             this.gbdanhmuc = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.picncc = new System.Windows.Forms.PictureBox();
-            this.picmh = new System.Windows.Forms.PictureBox();
-            this.picnv = new System.Windows.Forms.PictureBox();
-            this.pickh = new System.Windows.Forms.PictureBox();
             this.gbchucnang = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.picthongke = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.picbanhang = new System.Windows.Forms.PictureBox();
-            this.picnhaphang = new System.Windows.Forms.PictureBox();
             this.gbthongtindn = new System.Windows.Forms.GroupBox();
             this.lblthoigiandn = new System.Windows.Forms.Label();
             this.btndoimk = new System.Windows.Forms.Button();
@@ -55,19 +47,27 @@
             this.btndangxuat = new System.Windows.Forms.Button();
             this.dtthoigiandn = new System.Windows.Forms.DateTimePicker();
             this.picbanner = new System.Windows.Forms.PictureBox();
+            this.picphanquyen = new System.Windows.Forms.PictureBox();
+            this.picthongke = new System.Windows.Forms.PictureBox();
+            this.picbanhang = new System.Windows.Forms.PictureBox();
+            this.picnhaphang = new System.Windows.Forms.PictureBox();
+            this.picncc = new System.Windows.Forms.PictureBox();
+            this.picmh = new System.Windows.Forms.PictureBox();
+            this.picnv = new System.Windows.Forms.PictureBox();
+            this.pickh = new System.Windows.Forms.PictureBox();
             this.gbhethong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picphanquyen)).BeginInit();
             this.gbdanhmuc.SuspendLayout();
+            this.gbchucnang.SuspendLayout();
+            this.gbthongtindn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbanner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picphanquyen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picthongke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbanhang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picnhaphang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picncc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickh)).BeginInit();
-            this.gbchucnang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picthongke)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbanhang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picnhaphang)).BeginInit();
-            this.gbthongtindn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbanner)).BeginInit();
             this.SuspendLayout();
             // 
             // gbhethong
@@ -93,20 +93,6 @@
             this.label9.Size = new System.Drawing.Size(88, 13);
             this.label9.TabIndex = 11;
             this.label9.Text = "PHÂN QUYỀN";
-            // 
-            // picphanquyen
-            // 
-            this.picphanquyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picphanquyen.Image = global::QLBanHang.Properties.Resources.setup;
-            this.picphanquyen.ImageLocation = "";
-            this.picphanquyen.Location = new System.Drawing.Point(27, 25);
-            this.picphanquyen.Name = "picphanquyen";
-            this.picphanquyen.Size = new System.Drawing.Size(107, 98);
-            this.picphanquyen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picphanquyen.TabIndex = 6;
-            this.picphanquyen.TabStop = false;
-            this.picphanquyen.Tag = "";
-            this.picphanquyen.Click += new System.EventHandler(this.pbphanquyen_Click);
             // 
             // gbdanhmuc
             // 
@@ -171,62 +157,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "KHÁCH HÀNG";
             // 
-            // picncc
-            // 
-            this.picncc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picncc.Image = global::QLBanHang.Properties.Resources.buy1;
-            this.picncc.ImageLocation = "";
-            this.picncc.Location = new System.Drawing.Point(484, 29);
-            this.picncc.Name = "picncc";
-            this.picncc.Size = new System.Drawing.Size(107, 98);
-            this.picncc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picncc.TabIndex = 5;
-            this.picncc.TabStop = false;
-            this.picncc.Tag = "";
-            this.picncc.Click += new System.EventHandler(this.pbncc_Click);
-            // 
-            // picmh
-            // 
-            this.picmh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picmh.Image = global::QLBanHang.Properties.Resources.products;
-            this.picmh.ImageLocation = "";
-            this.picmh.Location = new System.Drawing.Point(335, 29);
-            this.picmh.Name = "picmh";
-            this.picmh.Size = new System.Drawing.Size(107, 98);
-            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picmh.TabIndex = 4;
-            this.picmh.TabStop = false;
-            this.picmh.Tag = "";
-            this.picmh.Click += new System.EventHandler(this.pbmathang_Click);
-            // 
-            // picnv
-            // 
-            this.picnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picnv.Image = global::QLBanHang.Properties.Resources.preferences_contact_list;
-            this.picnv.ImageLocation = "";
-            this.picnv.Location = new System.Drawing.Point(186, 29);
-            this.picnv.Name = "picnv";
-            this.picnv.Size = new System.Drawing.Size(107, 98);
-            this.picnv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picnv.TabIndex = 3;
-            this.picnv.TabStop = false;
-            this.picnv.Tag = "";
-            this.picnv.Click += new System.EventHandler(this.pbnv_Click);
-            // 
-            // pickh
-            // 
-            this.pickh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.pickh.Image = global::QLBanHang.Properties.Resources.guest;
-            this.pickh.ImageLocation = "";
-            this.pickh.Location = new System.Drawing.Point(37, 29);
-            this.pickh.Name = "pickh";
-            this.pickh.Size = new System.Drawing.Size(107, 98);
-            this.pickh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pickh.TabIndex = 2;
-            this.pickh.TabStop = false;
-            this.pickh.Tag = "";
-            this.pickh.Click += new System.EventHandler(this.pbkhachhang_Click);
-            // 
             // gbchucnang
             // 
             this.gbchucnang.Controls.Add(this.label8);
@@ -253,20 +183,6 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "THỐNG KÊ";
             // 
-            // picthongke
-            // 
-            this.picthongke.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picthongke.Image = global::QLBanHang.Properties.Resources.analytics;
-            this.picthongke.ImageLocation = "";
-            this.picthongke.Location = new System.Drawing.Point(325, 25);
-            this.picthongke.Name = "picthongke";
-            this.picthongke.Size = new System.Drawing.Size(107, 98);
-            this.picthongke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picthongke.TabIndex = 13;
-            this.picthongke.TabStop = false;
-            this.picthongke.Tag = "";
-            this.picthongke.Click += new System.EventHandler(this.pbthongke_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -288,34 +204,6 @@
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 9;
             this.label7.Text = "BÁN HÀNG";
-            // 
-            // picbanhang
-            // 
-            this.picbanhang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ////this.picbanhang.Image = global::QLBanHang.Properties.Resources.Package_Download;
-            this.picbanhang.ImageLocation = "";
-            this.picbanhang.Location = new System.Drawing.Point(178, 25);
-            this.picbanhang.Name = "picbanhang";
-            this.picbanhang.Size = new System.Drawing.Size(107, 98);
-            this.picbanhang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picbanhang.TabIndex = 2;
-            this.picbanhang.TabStop = false;
-            this.picbanhang.Tag = "";
-            this.picbanhang.Click += new System.EventHandler(this.pbnhaphang_Click);
-            // 
-            // picnhaphang
-            // 
-            this.picnhaphang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            //this.picnhaphang.Image = global::QLBanHang.Properties.Resources.Sales_by_Payment;
-            this.picnhaphang.ImageLocation = "";
-            this.picnhaphang.Location = new System.Drawing.Point(31, 25);
-            this.picnhaphang.Name = "picnhaphang";
-            this.picnhaphang.Size = new System.Drawing.Size(107, 98);
-            this.picnhaphang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picnhaphang.TabIndex = 1;
-            this.picnhaphang.TabStop = false;
-            this.picnhaphang.Tag = "";
-            this.picnhaphang.Click += new System.EventHandler(this.pbbanhang_Click);
             // 
             // gbthongtindn
             // 
@@ -385,7 +273,6 @@
             // 
             // picbanner
             // 
-            //this.picbanner.Image = global::QLBanHang.Properties.Resources.banner;
             this.picbanner.Location = new System.Drawing.Point(11, 12);
             this.picbanner.Name = "picbanner";
             this.picbanner.Size = new System.Drawing.Size(628, 169);
@@ -393,6 +280,118 @@
             this.picbanner.TabIndex = 4;
             this.picbanner.TabStop = false;
             this.picbanner.Click += new System.EventHandler(this.pbbanner_Click);
+            // 
+            // picphanquyen
+            // 
+            this.picphanquyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picphanquyen.Image = global::QLBanHang.Properties.Resources.setup;
+            this.picphanquyen.ImageLocation = "";
+            this.picphanquyen.Location = new System.Drawing.Point(27, 25);
+            this.picphanquyen.Name = "picphanquyen";
+            this.picphanquyen.Size = new System.Drawing.Size(107, 98);
+            this.picphanquyen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picphanquyen.TabIndex = 6;
+            this.picphanquyen.TabStop = false;
+            this.picphanquyen.Tag = "";
+            this.picphanquyen.Click += new System.EventHandler(this.pbphanquyen_Click);
+            // 
+            // picthongke
+            // 
+            this.picthongke.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picthongke.Image = global::QLBanHang.Properties.Resources.analytics;
+            this.picthongke.ImageLocation = "";
+            this.picthongke.Location = new System.Drawing.Point(325, 25);
+            this.picthongke.Name = "picthongke";
+            this.picthongke.Size = new System.Drawing.Size(107, 98);
+            this.picthongke.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picthongke.TabIndex = 13;
+            this.picthongke.TabStop = false;
+            this.picthongke.Tag = "";
+            this.picthongke.Click += new System.EventHandler(this.pbthongke_Click);
+            // 
+            // picbanhang
+            // 
+            this.picbanhang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picbanhang.Image = global::QLBanHang.Properties.Resources.Package_Download;
+            this.picbanhang.ImageLocation = "";
+            this.picbanhang.Location = new System.Drawing.Point(178, 25);
+            this.picbanhang.Name = "picbanhang";
+            this.picbanhang.Size = new System.Drawing.Size(107, 98);
+            this.picbanhang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbanhang.TabIndex = 2;
+            this.picbanhang.TabStop = false;
+            this.picbanhang.Tag = "";
+            this.picbanhang.Click += new System.EventHandler(this.pbnhaphang_Click);
+            // 
+            // picnhaphang
+            // 
+            this.picnhaphang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picnhaphang.Image = global::QLBanHang.Properties.Resources.Sales_by_Payment;
+            this.picnhaphang.ImageLocation = "";
+            this.picnhaphang.Location = new System.Drawing.Point(31, 25);
+            this.picnhaphang.Name = "picnhaphang";
+            this.picnhaphang.Size = new System.Drawing.Size(107, 98);
+            this.picnhaphang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picnhaphang.TabIndex = 1;
+            this.picnhaphang.TabStop = false;
+            this.picnhaphang.Tag = "";
+            this.picnhaphang.Click += new System.EventHandler(this.pbbanhang_Click);
+            // 
+            // picncc
+            // 
+            this.picncc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picncc.Image = global::QLBanHang.Properties.Resources.buy;
+            this.picncc.ImageLocation = "";
+            this.picncc.Location = new System.Drawing.Point(484, 29);
+            this.picncc.Name = "picncc";
+            this.picncc.Size = new System.Drawing.Size(107, 98);
+            this.picncc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picncc.TabIndex = 5;
+            this.picncc.TabStop = false;
+            this.picncc.Tag = "";
+            this.picncc.Click += new System.EventHandler(this.pbncc_Click);
+            // 
+            // picmh
+            // 
+            this.picmh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picmh.Image = global::QLBanHang.Properties.Resources.products;
+            this.picmh.ImageLocation = "";
+            this.picmh.Location = new System.Drawing.Point(335, 29);
+            this.picmh.Name = "picmh";
+            this.picmh.Size = new System.Drawing.Size(107, 98);
+            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picmh.TabIndex = 4;
+            this.picmh.TabStop = false;
+            this.picmh.Tag = "";
+            this.picmh.Click += new System.EventHandler(this.pbmathang_Click);
+            // 
+            // picnv
+            // 
+            this.picnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picnv.Image = global::QLBanHang.Properties.Resources.preferences_contact_list;
+            this.picnv.ImageLocation = "";
+            this.picnv.Location = new System.Drawing.Point(186, 29);
+            this.picnv.Name = "picnv";
+            this.picnv.Size = new System.Drawing.Size(107, 98);
+            this.picnv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picnv.TabIndex = 3;
+            this.picnv.TabStop = false;
+            this.picnv.Tag = "";
+            this.picnv.Click += new System.EventHandler(this.pbnv_Click);
+            // 
+            // pickh
+            // 
+            this.pickh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pickh.Image = global::QLBanHang.Properties.Resources.guest;
+            this.pickh.ImageLocation = "";
+            this.pickh.Location = new System.Drawing.Point(37, 29);
+            this.pickh.Name = "pickh";
+            this.pickh.Size = new System.Drawing.Size(107, 98);
+            this.pickh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pickh.TabIndex = 2;
+            this.pickh.TabStop = false;
+            this.pickh.Tag = "";
+            this.pickh.Click += new System.EventHandler(this.pbkhachhang_Click);
             // 
             // fmain
             // 
@@ -414,21 +413,21 @@
             this.Text = "Phần mềm Quản lý bán hàng Phong Vân";
             this.gbhethong.ResumeLayout(false);
             this.gbhethong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picphanquyen)).EndInit();
             this.gbdanhmuc.ResumeLayout(false);
             this.gbdanhmuc.PerformLayout();
+            this.gbchucnang.ResumeLayout(false);
+            this.gbchucnang.PerformLayout();
+            this.gbthongtindn.ResumeLayout(false);
+            this.gbthongtindn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbanner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picphanquyen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picthongke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbanhang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picnhaphang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picncc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picnv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickh)).EndInit();
-            this.gbchucnang.ResumeLayout(false);
-            this.gbchucnang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picthongke)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbanhang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picnhaphang)).EndInit();
-            this.gbthongtindn.ResumeLayout(false);
-            this.gbthongtindn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbanner)).EndInit();
             this.ResumeLayout(false);
 
         }

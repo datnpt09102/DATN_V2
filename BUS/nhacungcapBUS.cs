@@ -11,7 +11,7 @@ namespace BUS
     {
         ConnectDAL ketnoi = new ConnectDAL();
 
-        public DataTable shotable()
+        public DataTable showtable()
         {
             DataTable dt = ketnoi.laydulieu("SELECT * FROM nhacungcap");
             return dt;

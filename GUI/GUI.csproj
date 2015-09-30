@@ -7,7 +7,7 @@
     <ProjectGuid>{F4F407EF-283C-4B67-A2AC-28CDA709E3B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GUI</RootNamespace>
+    <RootNamespace>QLBanHang</RootNamespace>
     <AssemblyName>GUI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,8 +44,188 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fbanhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fbanhang.Designer.cs">
+      <DependentUpon>fbanhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fchamluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fchamluong.Designer.cs">
+      <DependentUpon>fchamluong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fcl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fcl.Designer.cs">
+      <DependentUpon>fcl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fcv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fcv.Designer.cs">
+      <DependentUpon>fcv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdangnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdangnhap.Designer.cs">
+      <DependentUpon>fdangnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdoimk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdoimk.Designer.cs">
+      <DependentUpon>fdoimk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fhdban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fhdban.Designer.cs">
+      <DependentUpon>fhdban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fhdnhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fhdnhap.Designer.cs">
+      <DependentUpon>fhdnhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fkh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fkh.Designer.cs">
+      <DependentUpon>fkh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="floaikh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="floaikh.Designer.cs">
+      <DependentUpon>floaikh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="floaimh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="floaimh.Designer.cs">
+      <DependentUpon>floaimh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fluong.Designer.cs">
+      <DependentUpon>fluong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmain.Designer.cs">
+      <DependentUpon>fmain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmh.Designer.cs">
+      <DependentUpon>fmh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fncc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fncc.Designer.cs">
+      <DependentUpon>fncc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fnhaphang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fnhaphang.Designer.cs">
+      <DependentUpon>fnhaphang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fnv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fnv.Designer.cs">
+      <DependentUpon>fnv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fphanquyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fphanquyen.Designer.cs">
+      <DependentUpon>fphanquyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fthongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fthongke.Designer.cs">
+      <DependentUpon>fthongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fthongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fthongtin.Designer.cs">
+      <DependentUpon>fthongtin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fbanhang.resx">
+      <DependentUpon>fbanhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fchamluong.resx">
+      <DependentUpon>fchamluong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fcl.resx">
+      <DependentUpon>fcl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fcv.resx">
+      <DependentUpon>fcv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdangnhap.resx">
+      <DependentUpon>fdangnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdoimk.resx">
+      <DependentUpon>fdoimk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fhdban.resx">
+      <DependentUpon>fhdban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fhdnhap.resx">
+      <DependentUpon>fhdnhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fkh.resx">
+      <DependentUpon>fkh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="floaikh.resx">
+      <DependentUpon>floaikh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="floaimh.resx">
+      <DependentUpon>floaimh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fluong.resx">
+      <DependentUpon>fluong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmain.resx">
+      <DependentUpon>fmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmh.resx">
+      <DependentUpon>fmh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fncc.resx">
+      <DependentUpon>fncc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fnhaphang.resx">
+      <DependentUpon>fnhaphang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fnv.resx">
+      <DependentUpon>fnv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fphanquyen.resx">
+      <DependentUpon>fphanquyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fthongke.resx">
+      <DependentUpon>fthongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fthongtin.resx">
+      <DependentUpon>fthongtin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -54,6 +234,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -64,6 +245,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{6cf843e4-4bdb-466f-9849-c46276c551d7}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{fe2aa786-6263-4002-9abf-82c4fd4ab3eb}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

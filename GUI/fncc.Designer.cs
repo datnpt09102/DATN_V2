@@ -83,7 +83,7 @@
             this.btndelncc.TabIndex = 3;
             this.btndelncc.Text = "Xóa";
             this.btndelncc.UseVisualStyleBackColor = true;
-            //this.btndelncc.Click += new System.EventHandler(this.btndelncc_Click);
+            this.btndelncc.Click += new System.EventHandler(this.btndelncc_Click);
             // 
             // btneditncc
             // 
@@ -95,7 +95,7 @@
             this.btneditncc.TabIndex = 2;
             this.btneditncc.Text = "Sửa";
             this.btneditncc.UseVisualStyleBackColor = true;
-            //this.btneditncc.Click += new System.EventHandler(this.btneditncc_Click);
+            this.btneditncc.Click += new System.EventHandler(this.btneditncc_Click);
             // 
             // btnaddncc
             // 
@@ -107,7 +107,6 @@
             this.btnaddncc.TabIndex = 1;
             this.btnaddncc.Text = "Thêm";
             this.btnaddncc.UseVisualStyleBackColor = true;
-            //this.btnaddncc.Click += new System.EventHandler(this.btnaddncc_Click);
             // 
             // btnrefreshncc
             // 
@@ -243,7 +242,7 @@
             this.dtgdsncc.AllowUserToResizeColumns = false;
             this.dtgdsncc.AllowUserToResizeRows = false;
             this.dtgdsncc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dtgdsncc.BackgroundColor = System.Drawing.Color.Silver;
+            this.dtgdsncc.BackgroundColor = System.Drawing.Color.White;
             this.dtgdsncc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgdsncc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.dtgdsncc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -266,6 +265,7 @@
             this.dtgdsncc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dtgdsncc.Size = new System.Drawing.Size(377, 332);
             this.dtgdsncc.TabIndex = 0;
+            this.dtgdsncc.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsncc_CellMouseClick);
             // 
             // sttncc
             // 

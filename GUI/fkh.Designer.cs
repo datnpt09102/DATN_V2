@@ -442,7 +442,7 @@
             this.Name = "fkh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
-            //this.Load += new System.EventHandler(this.fkh_Load);
+            this.Load += new System.EventHandler(this.fkh_Load);
             this.gbchucnangkh.ResumeLayout(false);
             this.gbthongtinkh.ResumeLayout(false);
             this.gbthongtinkh.PerformLayout();

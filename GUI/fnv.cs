@@ -144,6 +144,14 @@ namespace QLBanHang
                 for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
                 {
                     dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
+                    if(dtgdsnv.Rows[i].Cells["gioitinhnv"].Value.ToString() == "True")
+                    {
+                        dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nam";
+                    }
+                    else
+                    {
+                        dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nữ";
+                    }
                 }
             }
             catch (Exception ex)
@@ -217,6 +225,22 @@ namespace QLBanHang
         }
 
         #endregion
+
+        private void dtgdsnv_Sorted(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
+            {
+                dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
+                if (dtgdsnv.Rows[i].Cells["gioitinhnv"].Value.ToString() == "True")
+                {
+                    dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nam";
+                }
+                else
+                {
+                    dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nữ";
+                }
+            }
+        }
 
     }
 }

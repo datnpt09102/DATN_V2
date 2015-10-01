@@ -63,6 +63,7 @@
             this.tennv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaysinhnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioitinhnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmndnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diachinv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -418,6 +419,7 @@
             this.tennv,
             this.ngaysinhnv,
             this.gioitinhnv,
+            this.gioitinh,
             this.cmndnv,
             this.diachinv,
             this.emailnv,
@@ -434,6 +436,7 @@
             this.dtgdsnv.Size = new System.Drawing.Size(629, 408);
             this.dtgdsnv.TabIndex = 0;
             this.dtgdsnv.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsnv_CellMouseClick);
+            this.dtgdsnv.Sorted += new System.EventHandler(this.dtgdsnv_Sorted);
             // 
             // stt
             // 
@@ -465,7 +468,15 @@
             this.gioitinhnv.HeaderText = "Giới tính";
             this.gioitinhnv.Name = "gioitinhnv";
             this.gioitinhnv.ReadOnly = true;
+            this.gioitinhnv.Visible = false;
             this.gioitinhnv.Width = 71;
+            // 
+            // gioitinh
+            // 
+            this.gioitinh.HeaderText = "Giới tính";
+            this.gioitinh.Name = "gioitinh";
+            this.gioitinh.ReadOnly = true;
+            this.gioitinh.Width = 71;
             // 
             // cmndnv
             // 
@@ -586,6 +597,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tennv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinhnv;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioitinhnv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioitinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmndnv;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachinv;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailnv;

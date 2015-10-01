@@ -42,7 +42,7 @@ namespace QLBanHang
             }
         }
 
-        private void btnrefreshncc_Click(object sender, EventArgs e)
+        public void datarenew()
         {
             txttenncc.Clear();
             txtdiachincc.Clear();
@@ -51,8 +51,78 @@ namespace QLBanHang
             txtfaxncc.Clear();
         }
 
+        public void dataget()
+        {
+            laygiatri.Tenncc = txttenncc.Text;
+            laygiatri.Diachincc = txtdiachincc.Text;
+            laygiatri.Emailncc = txtmailncc.Text;
+            laygiatri.Sdtncc = txtsdtncc.Text;
+            laygiatri.Sofaxncc = txtfaxncc.Text;
+        }
+
+        public void datashow()
+        {
+            try
+            {
+                txttenncc.Text = dtgdsncc.CurrentRow.Cells["tenncc"].Value.ToString();
+                txtdiachincc.Text = dtgdsncc.CurrentRow.Cells["diachincc"].Value.ToString();
+                txtmailncc.Text = dtgdsncc.CurrentRow.Cells["mailncc"].Value.ToString();
+                txtsdtncc.Text = dtgdsncc.CurrentRow.Cells["sdtncc"].Value.ToString();
+                txtfaxncc.Text = dtgdsncc.CurrentRow.Cells["sofaxncc"].Value.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        public void addtable()
+        {
+            dataget();
+            data.addtable(laygiatri.Tenncc,laygiatri.Diachincc,laygiatri.Emailncc,laygiatri.Sdtncc,laygiatri.Sofaxncc);
+            dataload();
+            datarenew();
+        }
+
+        public void delrows()
+        {
+            data.delrows(int.Parse(dtgdsncc.CurrentRow.Cells["idncc"].Value.ToString()));
+            dataload();
+            datarenew();
+        }
+
+        public void editrow()
+        {
+            laygiatri.Idncc = int.Parse(dtgdsncc.CurrentRow.Cells["idncc"].Value.ToString());
+            data.editrow(laygiatri.Tenncc, laygiatri.Diachincc, laygiatri.Emailncc, laygiatri.Sdtncc, laygiatri.Sofaxncc,laygiatri.Idncc);
+            dataload();
+            datarenew();
+        }
+
+        private void btnrefreshncc_Click(object sender, EventArgs e)
+        {
+            datarenew();
+        }
+
         private void btnaddncc_Click(object sender, EventArgs e)
         {
-        }  
+            addtable();
+        }
+
+        private void btneditncc_Click(object sender, EventArgs e)
+        {
+            editrow();
+        }
+
+        private void btndelncc_Click(object sender, EventArgs e)
+        {
+            delrows();
+        }
+
+        private void dtgdsncc_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            datashow();
+        }
     }
 }

@@ -22,13 +22,14 @@ namespace BUS
         {
             ketnoi.thucthisql("insert into loaikhachhang(tenloaikh) values(N'" + tenloaikh + "')");
         }
-        public void delrows()
+        public void delrows(String tenloaikh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("delete loaikhachhang where tenloaikh = N'" + tenloaikh + "'");
         }
-        public void editrow()
+ 
+        public void editrow(int idloaikh, string tenloaikh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql(" UPDATE loaikhachhang SET tenloaikh = N'" + tenloaikh + "' WHERE idloaikh = '" + idloaikh + "'");
         }
     }
 }

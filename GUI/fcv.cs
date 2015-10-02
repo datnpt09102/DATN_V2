@@ -73,5 +73,18 @@ namespace QLBanHang
         {
             delrows();
         }
+
+        private void dtgdscv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txttencv.Text = dtgdscv.CurrentRow.Cells["tencv"].Value.ToString();
+        }
+
+        private void dtgdscv_Sorted(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtgdscv.Rows.Count - 1; i++)
+            {
+                dtgdscv.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
     }
 }

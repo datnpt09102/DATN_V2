@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fcv));
             this.gbthongtincv = new System.Windows.Forms.GroupBox();
             this.dtgdscv = new System.Windows.Forms.DataGridView();
+            this.sttcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tencv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idcv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txttencv = new System.Windows.Forms.TextBox();
             this.lbltencl = new System.Windows.Forms.Label();
             this.gbchucnangcv = new System.Windows.Forms.GroupBox();
@@ -38,9 +41,6 @@
             this.btndelcv = new System.Windows.Forms.Button();
             this.btneditcv = new System.Windows.Forms.Button();
             this.btnaddcv = new System.Windows.Forms.Button();
-            this.sttcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tencv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbthongtincv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdscv)).BeginInit();
             this.gbchucnangcv.SuspendLayout();
@@ -83,6 +83,33 @@
             this.dtgdscv.RowHeadersVisible = false;
             this.dtgdscv.Size = new System.Drawing.Size(352, 113);
             this.dtgdscv.TabIndex = 1;
+            this.dtgdscv.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdscv_CellMouseClick);
+            this.dtgdscv.Sorted += new System.EventHandler(this.dtgdscv_Sorted);
+            // 
+            // sttcl
+            // 
+            this.sttcl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.sttcl.HeaderText = "STT";
+            this.sttcl.Name = "sttcl";
+            this.sttcl.ReadOnly = true;
+            this.sttcl.Width = 52;
+            // 
+            // tencv
+            // 
+            this.tencv.DataPropertyName = "tencv";
+            this.tencv.HeaderText = "Tên chức vụ";
+            this.tencv.Name = "tencv";
+            this.tencv.ReadOnly = true;
+            this.tencv.Width = 92;
+            // 
+            // idcv
+            // 
+            this.idcv.DataPropertyName = "idcv";
+            this.idcv.HeaderText = "idcv";
+            this.idcv.Name = "idcv";
+            this.idcv.ReadOnly = true;
+            this.idcv.Visible = false;
+            this.idcv.Width = 51;
             // 
             // txttencv
             // 
@@ -163,31 +190,6 @@
             this.btnaddcv.Text = "Thêm";
             this.btnaddcv.UseVisualStyleBackColor = false;
             this.btnaddcv.Click += new System.EventHandler(this.btnaddcv_Click);
-            // 
-            // sttcl
-            // 
-            this.sttcl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.sttcl.HeaderText = "STT";
-            this.sttcl.Name = "sttcl";
-            this.sttcl.ReadOnly = true;
-            this.sttcl.Width = 52;
-            // 
-            // tencv
-            // 
-            this.tencv.DataPropertyName = "tencv";
-            this.tencv.HeaderText = "Tên chức vụ";
-            this.tencv.Name = "tencv";
-            this.tencv.ReadOnly = true;
-            this.tencv.Width = 92;
-            // 
-            // idcv
-            // 
-            this.idcv.DataPropertyName = "idcv";
-            this.idcv.HeaderText = "idcv";
-            this.idcv.Name = "idcv";
-            this.idcv.ReadOnly = true;
-            this.idcv.Visible = false;
-            this.idcv.Width = 51;
             // 
             // fcv
             // 

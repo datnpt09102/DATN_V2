@@ -141,6 +141,8 @@
             this.dtgdscl.RowHeadersVisible = false;
             this.dtgdscl.Size = new System.Drawing.Size(351, 156);
             this.dtgdscl.TabIndex = 2;
+            this.dtgdscl.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdscl_CellMouseClick);
+            this.dtgdscl.Sorted += new System.EventHandler(this.dtgdscl_Sorted);
             // 
             // sttcl
             // 

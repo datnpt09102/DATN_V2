@@ -52,7 +52,8 @@ namespace QLBanHang
         private void btnaddcl_Click(object sender, EventArgs e)
         {
             addtable();
-            dataload();
+            dataload(); 
+            datarenew();
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace QLBanHang
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         /// <summary>
@@ -93,6 +95,7 @@ namespace QLBanHang
 
             ///thực hiện tải lại dữ liệu từ Database
             dataload();
+            datarenew();
         }
 
         /// <summary>
@@ -110,6 +113,28 @@ namespace QLBanHang
             data.editrow(columnid, laygiatri.Tencl, laygiatri.Thoigiancl);
 
             dataload();
+            datarenew();
+        }
+
+        public void datarenew()
+        {
+            txttencl.Clear();
+            txtthoigianlam.Clear();
+            txttencl.Focus();
+        }
+
+        private void dtgdscl_Sorted(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtgdscl.Rows.Count; i++)
+            {
+                dtgdscl.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+
+        private void dtgdscl_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txttencl.Text = dtgdscl.CurrentRow.Cells["tencl"].Value.ToString();
+            txtthoigianlam.Text = dtgdscl.CurrentRow.Cells["thoigiancl"].Value.ToString();
         }
     }
 }

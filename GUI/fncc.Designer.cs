@@ -107,6 +107,7 @@
             this.btnaddncc.TabIndex = 1;
             this.btnaddncc.Text = "Thêm";
             this.btnaddncc.UseVisualStyleBackColor = true;
+            this.btnaddncc.Click += new System.EventHandler(this.btnaddncc_Click_1);
             // 
             // btnrefreshncc
             // 
@@ -161,6 +162,7 @@
             this.txtmailncc.Name = "txtmailncc";
             this.txtmailncc.Size = new System.Drawing.Size(238, 20);
             this.txtmailncc.TabIndex = 2;
+            this.txtmailncc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmailncc_KeyPress);
             // 
             // txtdiachincc
             // 

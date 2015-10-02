@@ -51,6 +51,15 @@ namespace QLBanHang
             txtfaxncc.Clear();
         }
 
+        //public void datacheck(KeyPressEventArgs e)
+        //{
+        //    char c = e.KeyChar;
+        //    if (char.IsDigit(c) == true)
+        //    {
+        //        MessageBox.Show("Chỉ được phép nhập kí tự là chữ");
+        //    }
+        //}
+
         public void dataget()
         {
             laygiatri.Tenncc = txttenncc.Text;
@@ -94,22 +103,25 @@ namespace QLBanHang
 
         public void editrow()
         {
-            laygiatri.Idncc = int.Parse(dtgdsncc.CurrentRow.Cells["idncc"].Value.ToString());
-            data.editrow(laygiatri.Tenncc, laygiatri.Diachincc, laygiatri.Emailncc, laygiatri.Sdtncc, laygiatri.Sofaxncc,laygiatri.Idncc);
-            dataload();
-            datarenew();
+            try
+            {
+                dataget();
+                laygiatri.Idncc = int.Parse(dtgdsncc.CurrentRow.Cells["idncc"].Value.ToString());
+                data.editrow(laygiatri.Tenncc, laygiatri.Diachincc, laygiatri.Emailncc, laygiatri.Sdtncc, laygiatri.Sofaxncc, laygiatri.Idncc);
+                dataload();
+                datarenew();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnrefreshncc_Click(object sender, EventArgs e)
         {
             datarenew();
         }
-
-        private void btnaddncc_Click(object sender, EventArgs e)
-        {
-            addtable();
-        }
-
+        
         private void btneditncc_Click(object sender, EventArgs e)
         {
             editrow();
@@ -124,5 +136,16 @@ namespace QLBanHang
         {
             datashow();
         }
+
+        private void btnaddncc_Click_1(object sender, EventArgs e)
+        {
+            addtable();
+        }
+
+        private void txtmailncc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
     }
 }

@@ -64,7 +64,7 @@ namespace QLBanHang
                 laydulieu.Emailnv = txtmailnv.Text;
                 laydulieu.Sdtnv = txtsdtnv.Text;
 
-                laydulieu.Ngayvaolam = dtpngayvaolam.Text;
+                laydulieu.Ngayvaolam = dtngayvaolam.Text;
                 laydulieu.Idcv = Convert.ToInt16(cbbcvnv.SelectedValue.ToString());
                 laydulieu.Anhnv = picanhnv.Image.ToString();
 
@@ -125,7 +125,7 @@ namespace QLBanHang
             txtdiachinv.Text = dtgdsnv.CurrentRow.Cells["diachinv"].Value.ToString();
             txtmailnv.Text = dtgdsnv.CurrentRow.Cells["emailnv"].Value.ToString();
             txtsdtnv.Text = dtgdsnv.CurrentRow.Cells["sdtnv"].Value.ToString();
-            dtpngayvaolam.Text = dtgdsnv.CurrentRow.Cells["ngayvaolam"].Value.ToString();
+            dtngayvaolam.Text = dtgdsnv.CurrentRow.Cells["ngayvaolam"].Value.ToString();
             cbbcvnv.Text = dtgdsnv.CurrentRow.Cells["idcv"].Value.ToString();
         }
 
@@ -144,6 +144,7 @@ namespace QLBanHang
                 for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
                 {
                     dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
+
                     if(dtgdsnv.Rows[i].Cells["gioitinhnv"].Value.ToString() == "True")
                     {
                         dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nam";
@@ -164,7 +165,8 @@ namespace QLBanHang
 
         public void addtable()
         {
-            //data.addtable(laydulieu.Tennv,laydulieu.Ngaysinhnv,laydulieu.Gioitinh,laydulieu.Cmndnv,laydulieu.Diachinv,laydulieu.Emailnv,laydulieu.Sdtnv,laydulieu.Ngayvaolam,laydulieu.Idcv);
+            data.addtable(laydulieu.Tennv, laydulieu.Ngaysinhnv, laydulieu.Gioitinhnv, laydulieu.Cmndnv, laydulieu.Diachinv, laydulieu.Emailnv, laydulieu.Sdtnv, laydulieu.Ngayvaolam, laydulieu.Idcv);
+            datarenew();
         }
 
         private void btnaddnv_Click(object sender, EventArgs e)
@@ -187,6 +189,7 @@ namespace QLBanHang
         public void delRows()
         {
             data.delrows(int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString()));
+            datarenew();
         }
 
         private void btndelnv_Click(object sender, EventArgs e)
@@ -208,8 +211,9 @@ namespace QLBanHang
         public void editRow()
         {
             getData();
-            laydulieu.Idnv = int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString());            
-            //data.editrow(laydulieu.Tennv,laydulieu.Ngaysinhnv,laydulieu.Gioitinh,laydulieu.Cmndnv,laydulieu.Diachinv,laydulieu.Emailnv,laydulieu.Sdtnv,laydulieu.Ngayvaolam,laydulieu.Idcv,laydulieu.Idnv);
+            laydulieu.Idnv = int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString());
+            data.editrow(laydulieu.Tennv, laydulieu.Ngaysinhnv, laydulieu.Gioitinhnv, laydulieu.Cmndnv, laydulieu.Diachinv, laydulieu.Emailnv, laydulieu.Sdtnv, laydulieu.Ngayvaolam, laydulieu.Idcv, laydulieu.Idnv);
+            
         }
         private void btneditnv_Click(object sender, EventArgs e)
         {
@@ -217,10 +221,12 @@ namespace QLBanHang
             {
                 editRow();
                 dataload();
+                datarenew();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                //throw ex;
             }
         }
 
@@ -231,6 +237,7 @@ namespace QLBanHang
             for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
             {
                 dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
+
                 if (dtgdsnv.Rows[i].Cells["gioitinhnv"].Value.ToString() == "True")
                 {
                     dtgdsnv.Rows[i].Cells["gioitinh"].Value = "Nam";
@@ -242,5 +249,31 @@ namespace QLBanHang
             }
         }
 
+        public void datarenew()
+        {
+            try
+            {
+                txttennv.Clear();
+                txtdiachinv.Clear();
+                txtmailnv.Clear();
+                txtcmndnv.Clear();
+                txtsdtnv.Clear();
+                cbbcvnv.SelectedIndex = 0;
+                cbbgioitinhnv.SelectedIndex = 0;
+                //dtngaysinhnv.Text = DateTime.MinValue.ToString();
+                dtngayvaolam.Value = DateTime.Now;
+                txttennv.Focus();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void btnrefreshnv_Click(object sender, EventArgs e)
+        {
+            datarenew();
+        }
     }
 }

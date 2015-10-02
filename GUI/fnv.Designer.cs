@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnviewcvnv = new System.Windows.Forms.Button();
             this.btnchonanhnv = new System.Windows.Forms.Button();
-            this.dtpngayvaolam = new System.Windows.Forms.DateTimePicker();
+            this.dtngayvaolam = new System.Windows.Forms.DateTimePicker();
             this.cbbcvnv = new System.Windows.Forms.ComboBox();
             this.dtngaysinhnv = new System.Windows.Forms.DateTimePicker();
             this.txtmailnv = new System.Windows.Forms.TextBox();
@@ -151,6 +151,7 @@
             this.btnrefreshnv.TabIndex = 0;
             this.btnrefreshnv.Text = "Làm mới";
             this.btnrefreshnv.UseVisualStyleBackColor = false;
+            this.btnrefreshnv.Click += new System.EventHandler(this.btnrefreshnv_Click);
             // 
             // gbthongtinnv
             // 
@@ -162,7 +163,7 @@
             this.gbthongtinnv.Controls.Add(this.label1);
             this.gbthongtinnv.Controls.Add(this.btnviewcvnv);
             this.gbthongtinnv.Controls.Add(this.btnchonanhnv);
-            this.gbthongtinnv.Controls.Add(this.dtpngayvaolam);
+            this.gbthongtinnv.Controls.Add(this.dtngayvaolam);
             this.gbthongtinnv.Controls.Add(this.cbbcvnv);
             this.gbthongtinnv.Controls.Add(this.dtngaysinhnv);
             this.gbthongtinnv.Controls.Add(this.txtmailnv);
@@ -247,18 +248,18 @@
             this.btnchonanhnv.Text = "Chọn ảnh";
             this.btnchonanhnv.UseVisualStyleBackColor = true;
             // 
-            // dtpngayvaolam
+            // dtngayvaolam
             // 
-            this.dtpngayvaolam.AllowDrop = true;
-            this.dtpngayvaolam.CustomFormat = "";
-            this.dtpngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpngayvaolam.Location = new System.Drawing.Point(107, 283);
-            this.dtpngayvaolam.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.dtpngayvaolam.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.dtpngayvaolam.Name = "dtpngayvaolam";
-            this.dtpngayvaolam.Size = new System.Drawing.Size(219, 20);
-            this.dtpngayvaolam.TabIndex = 7;
-            this.dtpngayvaolam.Value = new System.DateTime(2015, 9, 13, 0, 0, 0, 0);
+            this.dtngayvaolam.AllowDrop = true;
+            this.dtngayvaolam.CustomFormat = "";
+            this.dtngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtngayvaolam.Location = new System.Drawing.Point(107, 283);
+            this.dtngayvaolam.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.dtngayvaolam.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dtngayvaolam.Name = "dtngayvaolam";
+            this.dtngayvaolam.Size = new System.Drawing.Size(219, 20);
+            this.dtngayvaolam.TabIndex = 7;
+            this.dtngayvaolam.Value = new System.DateTime(2015, 9, 13, 0, 0, 0, 0);
             // 
             // cbbcvnv
             // 
@@ -277,7 +278,7 @@
             this.dtngaysinhnv.AllowDrop = true;
             this.dtngaysinhnv.CustomFormat = "dd/MM/yyyy";
             this.dtngaysinhnv.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtngaysinhnv.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtngaysinhnv.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtngaysinhnv.Location = new System.Drawing.Point(107, 63);
             this.dtngaysinhnv.MaxDate = new System.DateTime(1999, 12, 31, 0, 0, 0, 0);
             this.dtngaysinhnv.MinDate = new System.DateTime(1969, 1, 1, 0, 0, 0, 0);
@@ -318,7 +319,6 @@
             // picanhnv
             // 
             this.picanhnv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.picanhnv.Image = global::QLBanHang.Properties.Resources.person;
             this.picanhnv.Location = new System.Drawing.Point(347, 25);
             this.picanhnv.Name = "picanhnv";
             this.picanhnv.Size = new System.Drawing.Size(108, 142);
@@ -586,7 +586,7 @@
         private System.Windows.Forms.TextBox txtcmndnv;
         private System.Windows.Forms.TextBox txttennv;
         private System.Windows.Forms.ComboBox cbbcvnv;
-        private System.Windows.Forms.DateTimePicker dtpngayvaolam;
+        private System.Windows.Forms.DateTimePicker dtngayvaolam;
         private System.Windows.Forms.Button btnchonanhnv;
         private System.Windows.Forms.Button btnviewcvnv;
         private System.Windows.Forms.TextBox txtsdtnv;

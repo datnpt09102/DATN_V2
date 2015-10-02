@@ -29,7 +29,7 @@ namespace BUS
 
         public void editrow(string tenncc, string diachincc, string emailncc, string sdtncc, string sofaxncc, int idncc)
         {
-            ketnoi.thucthisql("UPDATE nhacungcap SET tencc = N'" + tenncc + "', diachincc = N'" + diachincc + "', emailncc = N'" + emailncc + "', sdtncc = '" + sdtncc + "', sofaxncc = '" + sofaxncc + "' WHERE idncc = '" + idncc + "'");
+            ketnoi.thucthisql("UPDATE nhacungcap SET tenncc = N'" + tenncc + "', diachincc = N'" + diachincc + "', emailncc = N'" + emailncc + "', sdtncc = '" + sdtncc + "', sofaxncc = '" + sofaxncc + "' WHERE idncc = '" + idncc + "'");
         }
     }
 }

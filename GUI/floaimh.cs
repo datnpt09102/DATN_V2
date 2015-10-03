@@ -17,8 +17,15 @@ namespace QLBanHang
         {
             InitializeComponent();
         }
-        BUS.loaimathangBUS data = new BUS.loaimathangBUS();
-        DTO.loaimathangDTO laygiatri = new DTO.loaimathangDTO();
+
+        loaimathangBUS data = new loaimathangBUS();
+        loaimathangDTO laygiatri = new loaimathangDTO();
+        
+        private void floaimh_Load(object sender, EventArgs e)
+        {
+            dataload();
+        }
+
         private void dataload()
         {
             dtgdsloaimh.DataSource = data.showtable();
@@ -28,17 +35,12 @@ namespace QLBanHang
             }
         }
 
-        private void floaimh_Load(object sender, EventArgs e)
-        {
-            dataload();
-        }
-
         public void addtable()
         {
             try
             {
                 laygiatri.Tenloaimh = txttenloaimh.Text;
-                //data.addtable(laygiatri.Tenloaimh);
+                data.addtable(laygiatri.Tenloaimh);
             }
             catch (Exception ex)
             {
@@ -54,6 +56,41 @@ namespace QLBanHang
         private void btnaddloaimh_Click(object sender, EventArgs e)
         {
             addtable();
+            dataload();
+            clear();
+        }
+
+        public void editrow()
+        {
+            laygiatri.Tenloaimh = txttenloaimh.Text;
+            laygiatri.Idloaimh = int.Parse(dtgdsloaimh.CurrentRow.Cells["idloaimh"].Value.ToString());
+            data.editrow(laygiatri.Idloaimh,laygiatri.Tenloaimh);
+            dataload();
+            clear();
+        }
+
+        private void btneditloaimh_Click(object sender, EventArgs e)
+        {
+            editrow();
+        }
+
+        private void dtgdsloaimh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txttenloaimh.Text = dtgdsloaimh.CurrentRow.Cells["tenloaimh"].Value.ToString();
+        }
+
+        private void dtgdsloaimh_Sorted(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtgdsloaimh.Rows.Count; i++)
+            {
+                dtgdsloaimh.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+
+        private void btndelloaimh_Click(object sender, EventArgs e)
+        {
+            laygiatri.Idloaimh = int.Parse(dtgdsloaimh.CurrentRow.Cells["idloaimh"].Value.ToString());
+            data.delrows(laygiatri.Idloaimh);
             dataload();
             clear();
         }

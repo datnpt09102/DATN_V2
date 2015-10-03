@@ -34,7 +34,7 @@ namespace QLBanHang
         #endregion
 
         nhanvienBUS data = new nhanvienBUS();
-        nhanvienDTO laydulieu = new nhanvienDTO();
+        nhanvienDTO laygiatri = new nhanvienDTO();
 
         private void fnv_Load(object sender, EventArgs e)
         {
@@ -47,26 +47,25 @@ namespace QLBanHang
         {
             try
             {
-                laydulieu.Tennv = txttennv.Text;
+                laygiatri.Tennv = txttennv.Text;
 
-                laydulieu.Ngaysinhnv = dtngaysinhnv.Text;
+                laygiatri.Ngaysinhnv = dtngaysinhnv.Text;
 
                 if (cbbgioitinhnv.Text == "Nam")
                 {
-                    laydulieu.Gioitinhnv = Convert.ToString("True");
+                    laygiatri.Gioitinhnv = Convert.ToString("True");
                 }
                 else
                 {
-                    laydulieu.Gioitinhnv = Convert.ToString("False");
+                    laygiatri.Gioitinhnv = Convert.ToString("False");
                 }
-                laydulieu.Cmndnv = txtcmndnv.Text;
-                laydulieu.Diachinv = txtdiachinv.Text;
-                laydulieu.Emailnv = txtmailnv.Text;
-                laydulieu.Sdtnv = txtsdtnv.Text;
-
-                laydulieu.Ngayvaolam = dtngayvaolam.Text;
-                laydulieu.Idcv = Convert.ToInt16(cbbcvnv.SelectedValue.ToString());
-                laydulieu.Anhnv = picanhnv.Image.ToString();
+                laygiatri.Cmndnv = txtcmndnv.Text;
+                laygiatri.Diachinv = txtdiachinv.Text;
+                laygiatri.Emailnv = txtmailnv.Text;
+                laygiatri.Sdtnv = txtsdtnv.Text;
+                laygiatri.Ngayvaolam = dtngayvaolam.Text;
+                laygiatri.Idcv = Convert.ToInt16(cbbcvnv.SelectedValue.ToString());
+                laygiatri.Anhnv = picanhnv.Image.ToString();
 
                 #region
                 //StringBuilder strbuil = new StringBuilder();
@@ -165,7 +164,7 @@ namespace QLBanHang
 
         public void addtable()
         {
-            data.addtable(laydulieu.Tennv, laydulieu.Ngaysinhnv, laydulieu.Gioitinhnv, laydulieu.Cmndnv, laydulieu.Diachinv, laydulieu.Emailnv, laydulieu.Sdtnv, laydulieu.Ngayvaolam, laydulieu.Idcv);
+            data.addtable(laygiatri.Tennv, laygiatri.Ngaysinhnv, laygiatri.Gioitinhnv, laygiatri.Cmndnv, laygiatri.Diachinv, laygiatri.Emailnv, laygiatri.Sdtnv, laygiatri.Ngayvaolam, laygiatri.Idcv);
             datarenew();
         }
 
@@ -211,8 +210,8 @@ namespace QLBanHang
         public void editRow()
         {
             getData();
-            laydulieu.Idnv = int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString());
-            data.editrow(laydulieu.Tennv, laydulieu.Ngaysinhnv, laydulieu.Gioitinhnv, laydulieu.Cmndnv, laydulieu.Diachinv, laydulieu.Emailnv, laydulieu.Sdtnv, laydulieu.Ngayvaolam, laydulieu.Idcv, laydulieu.Idnv);
+            laygiatri.Idnv = int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString());
+            data.editrow(laygiatri.Tennv, laygiatri.Ngaysinhnv, laygiatri.Gioitinhnv, laygiatri.Cmndnv, laygiatri.Diachinv, laygiatri.Emailnv, laygiatri.Sdtnv, laygiatri.Ngayvaolam, laygiatri.Idcv, laygiatri.Idnv);
             
         }
         private void btneditnv_Click(object sender, EventArgs e)

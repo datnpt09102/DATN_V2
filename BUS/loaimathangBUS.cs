@@ -12,20 +12,20 @@ namespace BUS
         ConnectDAL ketnoi = new ConnectDAL();
         public DataTable showtable()
         {
-            DataTable dt = ketnoi.laydulieu("");
+            DataTable dt = ketnoi.laydulieu("SELECT * FROM loaimathang");
             return dt;
         }
-        public void addtable()
+        public void addtable(string tenloaimh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("INSERT INTO loaimathang VALUES('" + tenloaimh + "')");
         }
-        public void delrows()
+        public void delrows(int idmh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("DELETE FROM loaimathang WHERE idloaimh = '" + idmh + "'");
         }
-        public void editrow()
+        public void editrow(int idloaimh, string tenloaimh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("UPDATE loaimathang SET tenloaimh = N'" + tenloaimh + "' WHERE idloaimh = '" + idloaimh + "'");
         }
     }
 }

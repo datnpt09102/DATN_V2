@@ -11,25 +11,24 @@ namespace BUS
     public class loaikhachhangBUS
     {
         ConnectDAL ketnoi = new ConnectDAL();
-        loaikhachhangDTO laythongtin = new loaikhachhangDTO();
 
         public DataTable showtable()
         {
             DataTable dt = ketnoi.laydulieu("select * from loaikhachhang");
             return dt;
         }
-        public void addtable(String tenloaikh)
+        public void addtable(string tenloaikh)
         {
-            ketnoi.thucthisql("insert into loaikhachhang(tenloaikh) values(N'" + tenloaikh + "')");
+            ketnoi.thucthisql("INSERT INTO loaikhachhang values(N'" + tenloaikh + "')");
         }
-        public void delrows(String tenloaikh)
+        public void delrows(int idloaikh)
         {
-            ketnoi.thucthisql("delete loaikhachhang where tenloaikh = N'" + tenloaikh + "'");
+            ketnoi.thucthisql("DELETE loaikhachhang WHERE idloaikh = N'" + idloaikh + "'");
         }
  
         public void editrow(int idloaikh, string tenloaikh)
         {
-            ketnoi.thucthisql(" UPDATE loaikhachhang SET tenloaikh = N'" + tenloaikh + "' WHERE idloaikh = '" + idloaikh + "'");
+            ketnoi.thucthisql("UPDATE loaikhachhang SET tenloaikh = N'" + tenloaikh + "' WHERE idloaikh = '" + idloaikh + "'");
         }
     }
 }

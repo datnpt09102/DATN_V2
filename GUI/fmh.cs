@@ -24,40 +24,61 @@ namespace QLBanHang
             frm.ShowDialog();
         }
         
-        BUS.mathangBUS data = new BUS.mathangBUS();
-        DTO.mathangDTO laygiatri = new DTO.mathangDTO(); 
+        mathangBUS data = new mathangBUS();
+        mathangDTO laygiatri = new mathangDTO(); 
+
+        private void fmh_Load(object sender, EventArgs e)
+        {
+            dataload();
+            loaimhload();
+        }
 
         private void dataload()
         {
-            dtgdsmh.DataSource = data.showtable();            
+            dtgdsmh.DataSource = data.showtable();
+
             for (int i = 0; i < dtgdsmh.Rows.Count; i++)
             {
                 dtgdsmh.Rows[i].Cells[0].Value = i + 1;
             }
         }
 
-        private void fmh_Load(object sender, EventArgs e)
+        private void loaimhload()
         {
-            loadloaimh();
-            dataload();
-
-            
+            cbbloaimh.DataSource = data.gettable();
+            cbbloaimh.ValueMember = "idloaimh";
+            cbbloaimh.DisplayMember = "tenloaimh";
         }
 
-        private void addtable()
+        private void dataget()
         {
             try
             {
                 laygiatri.Tenmh = txttenmh.Text;
-                laygiatri.Idloaimh = Convert.ToInt16(cbbloaimh.ValueMember.ToString());
-                laygiatri.Soluong = Convert.ToInt16(numsoluongmh.Value.ToString());
-                laygiatri.Donvitinh = cbbdvtinhmh.SelectedText.ToString();
-                laygiatri.Gianhap = Convert.ToDouble(numgianhapmh.Value.ToString());
-                laygiatri.Giaban = Convert.ToDouble(numgiabanmh.Value.ToString());
+                laygiatri.Idloaimh = int.Parse(cbbloaimh.SelectedValue.ToString());
+                laygiatri.Soluong = int.Parse(numsoluongmh.Value.ToString());
+                laygiatri.Donvitinh = cbbdvtinhmh.Text;
+                laygiatri.Gianhap = numgianhapmh.Value.ToString();
+                laygiatri.Giaban = numgiabanmh.Value.ToString();
                 laygiatri.Thongtinmh = txtthongtinmh.Text;
-                laygiatri.Anhmh = picmh.Image.ToString();
+                #region
+                //StringBuilder strbuil = new StringBuilder();
+                //strbuil.Append(laygiatri.Tenmh);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Idloaimh);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Soluong);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Donvitinh);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Gianhap);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Giaban);
+                //strbuil.Append("\n");
+                //strbuil.Append(laygiatri.Thongtinmh);
 
-                //data.addtable(laygiatri.Tenmh, laygiatri.Idloaimh, laygiatri.Soluong, laygiatri.Donvitinh, laygiatri.Gianhap, laygiatri.Giaban, laygiatri.Thongtinmh, laygiatri.Anhmh);
+                //MessageBox.Show(strbuil.ToString());
+                #endregion
             }
             catch (Exception ex)
             {
@@ -67,16 +88,45 @@ namespace QLBanHang
 
         private void btnaddmh_Click(object sender, EventArgs e)
         {
-            addtable();
+            dataget();
+        }
+
+        public void datashow()
+        {
+            cbbloaimh.Text = dtgdsmh.CurrentRow.Cells["loaimh"].Value.ToString();
+            txttenmh.Text = dtgdsmh.CurrentRow.Cells["tenmh"].Value.ToString();
+            txtthongtinmh.Text = dtgdsmh.CurrentRow.Cells["thongtinmh"].Value.ToString();
+            numsoluongmh.Value = int.Parse(dtgdsmh.CurrentRow.Cells["soluongmh"].Value.ToString());
+            numgiabanmh.Value = int.Parse(dtgdsmh.CurrentRow.Cells["giaban"].Value.ToString());
+            numgianhapmh.Value = int.Parse(dtgdsmh.CurrentRow.Cells["gianhap"].Value.ToString());
+            cbbdvtinhmh.Text = dtgdsmh.CurrentRow.Cells["dvtinhmh"].Value.ToString();
+        }
+
+        private void dtgdsmh_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            datashow();
+        }
+
+        public void editrow()
+        {
+            dataget();
+            laygiatri.Idloaimh = int.Parse(cbbloaimh.SelectedValue.ToString());
+            laygiatri.Idmh = int.Parse(dtgdsmh.CurrentRow.Cells["idmh"].Value.ToString());
+            data.editrow(laygiatri.Tenmh, laygiatri.Donvitinh, laygiatri.Thongtinmh, laygiatri.Giaban, laygiatri.Idloaimh, laygiatri.Idmh);
+        }
+
+        private void btneditmh_Click(object sender, EventArgs e)
+        {
+            editrow();
             dataload();
         }
 
-        private void loadloaimh()
+        private void dtgdsmh_Sorted(object sender, EventArgs e)
         {
-            //cbbloaimh.DataSource = data.Showcbb();
-            cbbloaimh.ValueMember = "idloaimh";
-            cbbloaimh.DisplayMember = "tenloaimh";
+            for (int i = 0; i < dtgdsmh.Rows.Count; i++)
+            {
+                dtgdsmh.Rows[i].Cells[0].Value = i + 1;
+            }
         }
-
     }
 }

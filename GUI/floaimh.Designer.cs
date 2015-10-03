@@ -86,6 +86,8 @@
             this.dtgdsloaimh.RowHeadersVisible = false;
             this.dtgdsloaimh.Size = new System.Drawing.Size(375, 116);
             this.dtgdsloaimh.TabIndex = 3;
+            this.dtgdsloaimh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsloaimh_CellMouseClick);
+            this.dtgdsloaimh.Sorted += new System.EventHandler(this.dtgdsloaimh_Sorted);
             // 
             // sttloaimh
             // 
@@ -166,6 +168,7 @@
             this.btndelloaimh.TabIndex = 2;
             this.btndelloaimh.Text = "Xóa";
             this.btndelloaimh.UseVisualStyleBackColor = false;
+            this.btndelloaimh.Click += new System.EventHandler(this.btndelloaimh_Click);
             // 
             // btneditloaimh
             // 
@@ -178,6 +181,7 @@
             this.btneditloaimh.TabIndex = 1;
             this.btneditloaimh.Text = "Sửa";
             this.btneditloaimh.UseVisualStyleBackColor = false;
+            this.btneditloaimh.Click += new System.EventHandler(this.btneditloaimh_Click);
             // 
             // btnaddloaimh
             // 

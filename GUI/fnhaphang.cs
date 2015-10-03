@@ -36,14 +36,12 @@ namespace QLBanHang
             frm.ShowDialog();
         }
 
+        
+
         private void fnhaphang_Load(object sender, EventArgs e)
         {
             //dataload();
         }
-
-
-        //BUS.nhaphangBUS data = new BUS.nhaphangBUS();
-        //DTO.chitiethdnhapDTO laygiatri = new DTO.chitiethdnhapDTO();
 
         //private void dataload()
         //{

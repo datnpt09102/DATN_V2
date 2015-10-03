@@ -58,11 +58,13 @@
             this.tenkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaysinhkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinhkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmndkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sdtkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diachikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mailkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaikh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idkh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbchucnangkh.SuspendLayout();
             this.gbthongtinkh.SuspendLayout();
             this.gbdskh.SuspendLayout();
@@ -92,6 +94,7 @@
             this.btndelkh.TabIndex = 3;
             this.btndelkh.Text = "Xóa";
             this.btndelkh.UseVisualStyleBackColor = true;
+            this.btndelkh.Click += new System.EventHandler(this.btndelkh_Click);
             // 
             // btneditkh
             // 
@@ -103,6 +106,7 @@
             this.btneditkh.TabIndex = 2;
             this.btneditkh.Text = "Sửa";
             this.btneditkh.UseVisualStyleBackColor = true;
+            this.btneditkh.Click += new System.EventHandler(this.btneditkh_Click);
             // 
             // btnaddkh
             // 
@@ -114,6 +118,7 @@
             this.btnaddkh.TabIndex = 1;
             this.btnaddkh.Text = "Thêm";
             this.btnaddkh.UseVisualStyleBackColor = true;
+            this.btnaddkh.Click += new System.EventHandler(this.btnaddkh_Click);
             // 
             // btnrefeshkh
             // 
@@ -342,11 +347,13 @@
             this.tenkh,
             this.ngaysinhkh,
             this.gioitinh,
+            this.gioitinhkh,
             this.cmndkh,
             this.sdtkh,
             this.diachikh,
             this.mailkh,
-            this.loaikh});
+            this.loaikh,
+            this.idkh});
             this.dtgdskh.EnableHeadersVisualStyles = false;
             this.dtgdskh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dtgdskh.Location = new System.Drawing.Point(6, 19);
@@ -355,6 +362,8 @@
             this.dtgdskh.RowHeadersVisible = false;
             this.dtgdskh.Size = new System.Drawing.Size(525, 407);
             this.dtgdskh.TabIndex = 0;
+            this.dtgdskh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdskh_CellMouseClick);
+            this.dtgdskh.Sorted += new System.EventHandler(this.dtgdskh_Sorted);
             // 
             // stt
             // 
@@ -385,7 +394,15 @@
             this.gioitinh.HeaderText = "Giới tính";
             this.gioitinh.Name = "gioitinh";
             this.gioitinh.ReadOnly = true;
+            this.gioitinh.Visible = false;
             this.gioitinh.Width = 71;
+            // 
+            // gioitinhkh
+            // 
+            this.gioitinhkh.HeaderText = "Giới tính";
+            this.gioitinhkh.Name = "gioitinhkh";
+            this.gioitinhkh.ReadOnly = true;
+            this.gioitinhkh.Width = 71;
             // 
             // cmndkh
             // 
@@ -426,6 +443,15 @@
             this.loaikh.Name = "loaikh";
             this.loaikh.ReadOnly = true;
             this.loaikh.Width = 111;
+            // 
+            // idkh
+            // 
+            this.idkh.DataPropertyName = "idkh";
+            this.idkh.HeaderText = "idkh";
+            this.idkh.Name = "idkh";
+            this.idkh.ReadOnly = true;
+            this.idkh.Visible = false;
+            this.idkh.Width = 51;
             // 
             // fkh
             // 
@@ -483,10 +509,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tenkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinhkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioitinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gioitinhkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmndkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdtkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachikh;
         private System.Windows.Forms.DataGridViewTextBoxColumn mailkh;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaikh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idkh;
     }
 }

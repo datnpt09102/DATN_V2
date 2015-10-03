@@ -21,30 +21,30 @@ namespace DTO
             get { return _hotenkh; }
             set { _hotenkh = value; }
         }
-        private DateTime _ngaysinhkh;
+        private string _ngaysinhkh;
 
-        public DateTime Ngaysinhkh
+        public string Ngaysinhkh
         {
             get { return _ngaysinhkh; }
             set { _ngaysinhkh = value; }
         }
-        private bool _gioitinhkh;
+        private string _gioitinhkh;
 
-        public bool Gioitinhkh
+        public string Gioitinhkh
         {
             get { return _gioitinhkh; }
             set { _gioitinhkh = value; }
         }
-        private int _cmndkh;
+        private string _cmndkh;
 
-        public int Cmndkh
+        public string Cmndkh
         {
             get { return _cmndkh; }
             set { _cmndkh = value; }
         }
-        private int _sdtkh;
+        private string _sdtkh;
 
-        public int Sdtkh
+        public string Sdtkh
         {
             get { return _sdtkh; }
             set { _sdtkh = value; }

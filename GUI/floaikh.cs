@@ -17,8 +17,9 @@ namespace QLBanHang
         {
             InitializeComponent();
         }
-       loaikhachhangBUS data = new BUS.loaikhachhangBUS();
-       loaikhachhangDTO laygiatri = new DTO.loaikhachhangDTO();
+
+        loaikhachhangBUS data = new BUS.loaikhachhangBUS();
+        loaikhachhangDTO laygiatri = new DTO.loaikhachhangDTO();
 
         private void floaikh_Load(object sender, EventArgs e)
         {
@@ -54,7 +55,7 @@ namespace QLBanHang
      
         private void btndelloaikh_Click(object sender, EventArgs e)
         {
-            string columnten = dtgdsloaikh.CurrentRow.Cells["tenloaikh"].Value.ToString();
+            int columnten = int.Parse(dtgdsloaikh.CurrentRow.Cells["idloaikh"].Value.ToString());
             data.delrows(columnten);
             dataload();
         }

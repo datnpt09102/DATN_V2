@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmh));
             this.gbthongtinmh = new System.Windows.Forms.GroupBox();
             this.btnchonanhmh = new System.Windows.Forms.Button();
-            this.picmh = new System.Windows.Forms.PictureBox();
             this.numsoluongmh = new System.Windows.Forms.NumericUpDown();
             this.lblsoluongmh = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,24 +55,24 @@
             this.btnrefreshmh = new System.Windows.Forms.Button();
             this.gbdsmh = new System.Windows.Forms.GroupBox();
             this.dtgdsmh = new System.Windows.Forms.DataGridView();
+            this.picmh = new System.Windows.Forms.PictureBox();
             this.sttmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaimh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvtinhmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giamh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thongtinmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idloaimh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbthongtinmh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numsoluongmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgiabanmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgianhapmh)).BeginInit();
             this.gbchucnangmh.SuspendLayout();
             this.gbdsmh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdsmh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picmh)).BeginInit();
             this.SuspendLayout();
             // 
             // gbthongtinmh
@@ -112,38 +111,18 @@
             this.btnchonanhmh.Location = new System.Drawing.Point(302, 142);
             this.btnchonanhmh.Name = "btnchonanhmh";
             this.btnchonanhmh.Size = new System.Drawing.Size(79, 23);
-            this.btnchonanhmh.TabIndex = 2;
+            this.btnchonanhmh.TabIndex = 7;
             this.btnchonanhmh.Text = "Chọn ảnh";
             this.btnchonanhmh.UseVisualStyleBackColor = true;
             // 
-            // picmh
-            // 
-            //this.picmh.Image = global::QLBanHang.Properties.Resources.product;
-            this.picmh.Location = new System.Drawing.Point(291, 19);
-            this.picmh.Name = "picmh";
-            this.picmh.Size = new System.Drawing.Size(100, 117);
-            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picmh.TabIndex = 27;
-            this.picmh.TabStop = false;
-            // 
             // numsoluongmh
             // 
-            this.numsoluongmh.Increment = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
             this.numsoluongmh.Location = new System.Drawing.Point(128, 263);
-            this.numsoluongmh.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
             this.numsoluongmh.Name = "numsoluongmh";
+            this.numsoluongmh.ReadOnly = true;
             this.numsoluongmh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.numsoluongmh.Size = new System.Drawing.Size(181, 20);
-            this.numsoluongmh.TabIndex = 4;
-            this.numsoluongmh.ThousandsSeparator = true;
+            this.numsoluongmh.TabIndex = 3;
             // 
             // lblsoluongmh
             // 
@@ -167,7 +146,7 @@
             // numgiabanmh
             // 
             this.numgiabanmh.Increment = new decimal(new int[] {
-            5000,
+            50000,
             0,
             0,
             0});
@@ -180,8 +159,7 @@
             this.numgiabanmh.Name = "numgiabanmh";
             this.numgiabanmh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.numgiabanmh.Size = new System.Drawing.Size(181, 20);
-            this.numgiabanmh.TabIndex = 6;
-            this.numgiabanmh.ThousandsSeparator = true;
+            this.numgiabanmh.TabIndex = 5;
             // 
             // lblgiabanmh
             // 
@@ -214,7 +192,7 @@
             this.cbbdvtinhmh.Location = new System.Drawing.Point(128, 380);
             this.cbbdvtinhmh.Name = "cbbdvtinhmh";
             this.cbbdvtinhmh.Size = new System.Drawing.Size(181, 21);
-            this.cbbdvtinhmh.TabIndex = 7;
+            this.cbbdvtinhmh.TabIndex = 6;
             // 
             // lbldvgiamh
             // 
@@ -229,7 +207,7 @@
             // numgianhapmh
             // 
             this.numgianhapmh.Increment = new decimal(new int[] {
-            5000,
+            50000,
             0,
             0,
             0});
@@ -240,10 +218,10 @@
             0,
             0});
             this.numgianhapmh.Name = "numgianhapmh";
+            this.numgianhapmh.ReadOnly = true;
             this.numgianhapmh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.numgianhapmh.Size = new System.Drawing.Size(181, 20);
-            this.numgianhapmh.TabIndex = 5;
-            this.numgianhapmh.ThousandsSeparator = true;
+            this.numgianhapmh.TabIndex = 4;
             // 
             // txtthongtinmh
             // 
@@ -251,7 +229,7 @@
             this.txtthongtinmh.Multiline = true;
             this.txtthongtinmh.Name = "txtthongtinmh";
             this.txtthongtinmh.Size = new System.Drawing.Size(263, 60);
-            this.txtthongtinmh.TabIndex = 3;
+            this.txtthongtinmh.TabIndex = 2;
             // 
             // txttenmh
             // 
@@ -365,6 +343,7 @@
             this.btneditmh.TabIndex = 2;
             this.btneditmh.Text = "Sửa";
             this.btneditmh.UseVisualStyleBackColor = true;
+            this.btneditmh.Click += new System.EventHandler(this.btneditmh_Click);
             // 
             // btnrefreshmh
             // 
@@ -409,11 +388,10 @@
             this.loaimh,
             this.soluongmh,
             this.dvtinhmh,
-            this.giamh,
             this.gianhap,
+            this.giaban,
             this.thongtinmh,
-            this.Column1,
-            this.idloaimh});
+            this.idmh});
             this.dtgdsmh.EnableHeadersVisualStyles = false;
             this.dtgdsmh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dtgdsmh.Location = new System.Drawing.Point(6, 19);
@@ -422,6 +400,18 @@
             this.dtgdsmh.RowHeadersVisible = false;
             this.dtgdsmh.Size = new System.Drawing.Size(624, 455);
             this.dtgdsmh.TabIndex = 0;
+            this.dtgdsmh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsmh_CellMouseClick);
+            this.dtgdsmh.Sorted += new System.EventHandler(this.dtgdsmh_Sorted);
+            // 
+            // picmh
+            // 
+            this.picmh.Image = global::QLBanHang.Properties.Resources.product;
+            this.picmh.Location = new System.Drawing.Point(291, 19);
+            this.picmh.Name = "picmh";
+            this.picmh.Size = new System.Drawing.Size(100, 117);
+            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picmh.TabIndex = 27;
+            this.picmh.TabStop = false;
             // 
             // sttmh
             // 
@@ -462,21 +452,21 @@
             this.dvtinhmh.ReadOnly = true;
             this.dvtinhmh.Width = 84;
             // 
-            // giamh
-            // 
-            this.giamh.DataPropertyName = "gianhap";
-            this.giamh.HeaderText = "Giá Nhập";
-            this.giamh.Name = "giamh";
-            this.giamh.ReadOnly = true;
-            this.giamh.Width = 76;
-            // 
             // gianhap
             // 
-            this.gianhap.DataPropertyName = "giaban";
-            this.gianhap.HeaderText = "Giá Bán (VNĐ)";
+            this.gianhap.DataPropertyName = "gianhap";
+            this.gianhap.HeaderText = "Giá Nhập";
             this.gianhap.Name = "gianhap";
             this.gianhap.ReadOnly = true;
-            this.gianhap.Width = 101;
+            this.gianhap.Width = 76;
+            // 
+            // giaban
+            // 
+            this.giaban.DataPropertyName = "giaban";
+            this.giaban.HeaderText = "Giá Bán";
+            this.giaban.Name = "giaban";
+            this.giaban.ReadOnly = true;
+            this.giaban.Width = 69;
             // 
             // thongtinmh
             // 
@@ -486,22 +476,14 @@
             this.thongtinmh.ReadOnly = true;
             this.thongtinmh.Width = 76;
             // 
-            // Column1
+            // idmh
             // 
-            this.Column1.DataPropertyName = "anhmh";
-            this.Column1.HeaderText = "Hình Ảnh";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 75;
-            // 
-            // idloaimh
-            // 
-            this.idloaimh.DataPropertyName = "idloaimh";
-            this.idloaimh.HeaderText = "idloaimh";
-            this.idloaimh.Name = "idloaimh";
-            this.idloaimh.ReadOnly = true;
-            this.idloaimh.Visible = false;
-            this.idloaimh.Width = 69;
+            this.idmh.DataPropertyName = "idmh";
+            this.idmh.HeaderText = "idmh";
+            this.idmh.Name = "idmh";
+            this.idmh.ReadOnly = true;
+            this.idmh.Visible = false;
+            this.idmh.Width = 53;
             // 
             // fmh
             // 
@@ -520,13 +502,13 @@
             this.Load += new System.EventHandler(this.fmh_Load);
             this.gbthongtinmh.ResumeLayout(false);
             this.gbthongtinmh.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numsoluongmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgiabanmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgianhapmh)).EndInit();
             this.gbchucnangmh.ResumeLayout(false);
             this.gbdsmh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgdsmh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picmh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,10 +547,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loaimh;
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongmh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvtinhmh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giamh;
         private System.Windows.Forms.DataGridViewTextBoxColumn gianhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaban;
         private System.Windows.Forms.DataGridViewTextBoxColumn thongtinmh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idloaimh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idmh;
     }
 }

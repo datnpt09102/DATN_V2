@@ -12,20 +12,25 @@ namespace BUS
         ConnectDAL ketnoi = new ConnectDAL();
         public DataTable showtable()
         {
-            DataTable dt = ketnoi.laydulieu("");
+            DataTable dt = ketnoi.laydulieu("SELECT idkh,hotenkh,ngaysinhkh,gioitinhkh,cmndkh,sdtkh,diachikh,emailkh,tenloaikh FROM khachhang join loaikhachhang ON khachhang.idloaikh = loaikhachhang.idloaikh");
             return dt;
         }
-        public void addtable()
+        public void addtable(string tenkh, string diachikh, string gioitinhkh, string ngaysinhkh, string emailkh, string cmndkh, string sdtkh, int idloaikh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("SET DATEFORMAT dmy INSERT INTO khachhang VALUES(N'" + tenkh + "','" + ngaysinhkh + "',N'" + gioitinhkh + "',N'" + cmndkh + "',N'" + sdtkh + "',N'" + diachikh + "',N'" + emailkh + "','" + idloaikh + "')");
         }
-        public void delrows()
+        public void delrows(int idkh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("DELETE FROM khachhang WHERE idkh = " + idkh + "");
         }
-        public void editrow()
+        public void editrow(string tenkh, string diachikh, string gioitinhkh, string ngaysinhkh, string emailkh, string cmndkh, string sdtkh, int idloaikh, int idkh)
         {
-            ketnoi.thucthisql("");
+            ketnoi.thucthisql("SET DATEFORMAT dmy UPDATE khachhang SET hotenkh=N'" + tenkh + "',ngaysinhkh='" + ngaysinhkh + "',gioitinhkh=N'" + gioitinhkh + "',cmndkh=N'" + cmndkh + "',sdtkh=N'" + sdtkh + "',diachikh=N'" + diachikh + "',emailkh=N'" + emailkh + "',idloaikh='" + idloaikh + "' WHERE idkh='" + idkh + "'");
+        }
+        public DataTable gettable()
+        {
+            DataTable dt = ketnoi.laydulieu("SELECT * FROM loaikhachhang");
+            return dt;
         }
     }
 }

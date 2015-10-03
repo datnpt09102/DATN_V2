@@ -49,16 +49,16 @@ namespace DTO
             get { return _thongtinmh; }
             set { _thongtinmh = value; }
         }
-        private double _gianhap;
+        private string _gianhap;
 
-        public double Gianhap
+        public string Gianhap
         {
             get { return _gianhap; }
             set { _gianhap = value; }
         }
-        private double _giaban;
+        private string _giaban;
 
-        public double Giaban
+        public string Giaban
         {
             get { return _giaban; }
             set { _giaban = value; }

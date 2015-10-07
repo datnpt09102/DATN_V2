@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmh));
             this.gbthongtinmh = new System.Windows.Forms.GroupBox();
             this.btnchonanhmh = new System.Windows.Forms.Button();
+            this.picmh = new System.Windows.Forms.PictureBox();
             this.numsoluongmh = new System.Windows.Forms.NumericUpDown();
             this.lblsoluongmh = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.btnrefreshmh = new System.Windows.Forms.Button();
             this.gbdsmh = new System.Windows.Forms.GroupBox();
             this.dtgdsmh = new System.Windows.Forms.DataGridView();
-            this.picmh = new System.Windows.Forms.PictureBox();
             this.sttmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaimh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,13 +66,13 @@
             this.thongtinmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idmh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbthongtinmh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numsoluongmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgiabanmh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgianhapmh)).BeginInit();
             this.gbchucnangmh.SuspendLayout();
             this.gbdsmh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgdsmh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picmh)).BeginInit();
             this.SuspendLayout();
             // 
             // gbthongtinmh
@@ -114,6 +114,16 @@
             this.btnchonanhmh.TabIndex = 7;
             this.btnchonanhmh.Text = "Chọn ảnh";
             this.btnchonanhmh.UseVisualStyleBackColor = true;
+            // 
+            // picmh
+            // 
+            this.picmh.Image = global::QLBanHang.Properties.Resources.product;
+            this.picmh.Location = new System.Drawing.Point(291, 19);
+            this.picmh.Name = "picmh";
+            this.picmh.Size = new System.Drawing.Size(100, 117);
+            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picmh.TabIndex = 27;
+            this.picmh.TabStop = false;
             // 
             // numsoluongmh
             // 
@@ -403,16 +413,6 @@
             this.dtgdsmh.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsmh_CellMouseClick);
             this.dtgdsmh.Sorted += new System.EventHandler(this.dtgdsmh_Sorted);
             // 
-            // picmh
-            // 
-            this.picmh.Image = global::QLBanHang.Properties.Resources.product;
-            this.picmh.Location = new System.Drawing.Point(291, 19);
-            this.picmh.Name = "picmh";
-            this.picmh.Size = new System.Drawing.Size(100, 117);
-            this.picmh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picmh.TabIndex = 27;
-            this.picmh.TabStop = false;
-            // 
             // sttmh
             // 
             this.sttmh.HeaderText = "STT";
@@ -487,7 +487,7 @@
             // 
             // fmh
             // 
-            this.AcceptButton = this.btnaddmh;
+            this.AcceptButton = this.btneditmh;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -502,13 +502,13 @@
             this.Load += new System.EventHandler(this.fmh_Load);
             this.gbthongtinmh.ResumeLayout(false);
             this.gbthongtinmh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numsoluongmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgiabanmh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numgianhapmh)).EndInit();
             this.gbchucnangmh.ResumeLayout(false);
             this.gbdsmh.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgdsmh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picmh)).EndInit();
             this.ResumeLayout(false);
 
         }

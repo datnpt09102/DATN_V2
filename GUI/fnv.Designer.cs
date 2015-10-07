@@ -71,6 +71,7 @@
             this.ngayvaolam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anhnv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbchucnangnv.SuspendLayout();
             this.gbthongtinnv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picanhnv)).BeginInit();
@@ -180,7 +181,7 @@
             this.gbthongtinnv.Controls.Add(this.lbltennv);
             this.gbthongtinnv.Location = new System.Drawing.Point(12, 76);
             this.gbthongtinnv.Name = "gbthongtinnv";
-            this.gbthongtinnv.Size = new System.Drawing.Size(472, 370);
+            this.gbthongtinnv.Size = new System.Drawing.Size(472, 373);
             this.gbthongtinnv.TabIndex = 1;
             this.gbthongtinnv.TabStop = false;
             this.gbthongtinnv.Text = "Thông tin";
@@ -247,6 +248,7 @@
             this.btnchonanhnv.TabIndex = 10;
             this.btnchonanhnv.Text = "Chọn ảnh";
             this.btnchonanhnv.UseVisualStyleBackColor = true;
+            this.btnchonanhnv.Click += new System.EventHandler(this.btnchonanhnv_Click);
             // 
             // dtngayvaolam
             // 
@@ -397,23 +399,22 @@
             this.gbdsnv.Controls.Add(this.dtgdsnv);
             this.gbdsnv.Location = new System.Drawing.Point(490, 12);
             this.gbdsnv.Name = "gbdsnv";
-            this.gbdsnv.Size = new System.Drawing.Size(640, 434);
+            this.gbdsnv.Size = new System.Drawing.Size(682, 437);
             this.gbdsnv.TabIndex = 2;
             this.gbdsnv.TabStop = false;
             this.gbdsnv.Text = "Danh sách nhân viên";
             // 
             // dtgdsnv
             // 
+            this.dtgdsnv.AllowUserToAddRows = false;
+            this.dtgdsnv.AllowUserToDeleteRows = false;
             this.dtgdsnv.AllowUserToResizeRows = false;
-            this.dtgdsnv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgdsnv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dtgdsnv.BackgroundColor = System.Drawing.Color.White;
             this.dtgdsnv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgdsnv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgdsnv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dtgdsnv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgdsnv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgdsnv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
             this.tennv,
@@ -426,15 +427,20 @@
             this.sdtnv,
             this.ngayvaolam,
             this.idcv,
-            this.idnv});
+            this.idnv,
+            this.anhnv});
+            this.dtgdsnv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgdsnv.EnableHeadersVisualStyles = false;
             this.dtgdsnv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.dtgdsnv.Location = new System.Drawing.Point(6, 19);
+            this.dtgdsnv.Location = new System.Drawing.Point(3, 16);
             this.dtgdsnv.Name = "dtgdsnv";
             this.dtgdsnv.ReadOnly = true;
             this.dtgdsnv.RowHeadersVisible = false;
-            this.dtgdsnv.Size = new System.Drawing.Size(629, 408);
+            this.dtgdsnv.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgdsnv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgdsnv.Size = new System.Drawing.Size(676, 418);
             this.dtgdsnv.TabIndex = 0;
+            this.dtgdsnv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgdsnv_CellFormatting);
             this.dtgdsnv.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgdsnv_CellMouseClick);
             this.dtgdsnv.Sorted += new System.EventHandler(this.dtgdsnv_Sorted);
             // 
@@ -448,83 +454,94 @@
             // 
             // tennv
             // 
+            this.tennv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tennv.DataPropertyName = "tennv";
-            this.tennv.HeaderText = "Tên NV";
+            this.tennv.FillWeight = 150F;
+            this.tennv.HeaderText = "Tên";
+            this.tennv.MinimumWidth = 50;
             this.tennv.Name = "tennv";
             this.tennv.ReadOnly = true;
-            this.tennv.Width = 68;
             // 
             // ngaysinhnv
             // 
+            this.ngaysinhnv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ngaysinhnv.DataPropertyName = "ngaysinhnv";
-            this.ngaysinhnv.HeaderText = "Ngày sinh NV";
+            this.ngaysinhnv.HeaderText = "Ngày sinh";
+            this.ngaysinhnv.MinimumWidth = 50;
             this.ngaysinhnv.Name = "ngaysinhnv";
             this.ngaysinhnv.ReadOnly = true;
-            this.ngaysinhnv.Width = 96;
             // 
             // gioitinhnv
             // 
+            this.gioitinhnv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.gioitinhnv.DataPropertyName = "gioitinh";
             this.gioitinhnv.HeaderText = "Giới tính";
             this.gioitinhnv.Name = "gioitinhnv";
             this.gioitinhnv.ReadOnly = true;
             this.gioitinhnv.Visible = false;
-            this.gioitinhnv.Width = 71;
             // 
             // gioitinh
             // 
+            this.gioitinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.gioitinh.HeaderText = "Giới tính";
             this.gioitinh.Name = "gioitinh";
             this.gioitinh.ReadOnly = true;
-            this.gioitinh.Width = 71;
             // 
             // cmndnv
             // 
+            this.cmndnv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cmndnv.DataPropertyName = "cmndnv";
-            this.cmndnv.HeaderText = "CMND NV";
+            this.cmndnv.HeaderText = "CMND";
+            this.cmndnv.MinimumWidth = 50;
             this.cmndnv.Name = "cmndnv";
             this.cmndnv.ReadOnly = true;
-            this.cmndnv.Width = 81;
             // 
             // diachinv
             // 
+            this.diachinv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.diachinv.DataPropertyName = "diachinv";
-            this.diachinv.HeaderText = "Địa chỉ NV";
+            this.diachinv.FillWeight = 200F;
+            this.diachinv.HeaderText = "Địa chỉ";
+            this.diachinv.MinimumWidth = 50;
             this.diachinv.Name = "diachinv";
             this.diachinv.ReadOnly = true;
-            this.diachinv.Width = 82;
             // 
             // emailnv
             // 
+            this.emailnv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.emailnv.DataPropertyName = "emailnv";
-            this.emailnv.HeaderText = "Email NV";
+            this.emailnv.FillWeight = 150F;
+            this.emailnv.HeaderText = "Email";
+            this.emailnv.MinimumWidth = 50;
             this.emailnv.Name = "emailnv";
             this.emailnv.ReadOnly = true;
-            this.emailnv.Width = 74;
             // 
             // sdtnv
             // 
+            this.sdtnv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sdtnv.DataPropertyName = "sdtnv";
-            this.sdtnv.HeaderText = "Số điện thoại";
+            this.sdtnv.HeaderText = "SĐT";
+            this.sdtnv.MinimumWidth = 50;
             this.sdtnv.Name = "sdtnv";
             this.sdtnv.ReadOnly = true;
-            this.sdtnv.Width = 94;
             // 
             // ngayvaolam
             // 
+            this.ngayvaolam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ngayvaolam.DataPropertyName = "ngayvaolam";
             this.ngayvaolam.HeaderText = "Ngày vào làm";
+            this.ngayvaolam.MinimumWidth = 50;
             this.ngayvaolam.Name = "ngayvaolam";
             this.ngayvaolam.ReadOnly = true;
-            this.ngayvaolam.Width = 96;
             // 
             // idcv
             // 
+            this.idcv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idcv.DataPropertyName = "tencv";
             this.idcv.HeaderText = "Chức vụ";
+            this.idcv.MinimumWidth = 50;
             this.idcv.Name = "idcv";
             this.idcv.ReadOnly = true;
-            this.idcv.Width = 71;
             // 
             // idnv
             // 
@@ -535,6 +552,15 @@
             this.idnv.Visible = false;
             this.idnv.Width = 51;
             // 
+            // anhnv
+            // 
+            this.anhnv.DataPropertyName = "anhnv";
+            this.anhnv.HeaderText = "anhnv";
+            this.anhnv.Name = "anhnv";
+            this.anhnv.ReadOnly = true;
+            this.anhnv.Visible = false;
+            this.anhnv.Width = 61;
+            // 
             // fnv
             // 
             this.AcceptButton = this.btnaddnv;
@@ -542,7 +568,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1142, 458);
+            this.ClientSize = new System.Drawing.Size(1184, 461);
             this.Controls.Add(this.gbdsnv);
             this.Controls.Add(this.gbthongtinnv);
             this.Controls.Add(this.gbchucnangnv);
@@ -605,6 +631,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayvaolam;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcv;
         private System.Windows.Forms.DataGridViewTextBoxColumn idnv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anhnv;
     }
 }
 

@@ -10,11 +10,18 @@ namespace BUS
     public class chitiethdnhapBUS
     {
         ConnectDAL ketnoi = new ConnectDAL();
-        public DataTable showtable()
+        public DataTable gettablemh()
         {
-            DataTable dt = ketnoi.laydulieu("");
+            DataTable dt = ketnoi.laydulieu("SELECT tenmh,soluong, idmh FROM mathang");
             return dt;
         }
+
+        public DataTable getloaimh()
+        {
+            DataTable dt = ketnoi.laydulieu("SELECT * FROM loaimathang");
+            return dt;
+        }
+
         public void addtable()
         {
             ketnoi.thucthisql("");

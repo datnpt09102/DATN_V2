@@ -12,7 +12,7 @@ namespace BUS
         ConnectDAL ketnoi = new ConnectDAL();
         public DataTable showtable()
         {
-            DataTable dt = ketnoi.laydulieu("");
+            DataTable dt = ketnoi.laydulieu("SELECT idhdban,tenmh,soluongmhban,giaban,thanhtien,donvimh FROM chitiethdban join mathang on chitiethdban.idmh = mathang.idmh");
             return dt;
         }
         public void addtable()
@@ -27,5 +27,6 @@ namespace BUS
         {
             ketnoi.thucthisql("");
         }
+
     }
 }

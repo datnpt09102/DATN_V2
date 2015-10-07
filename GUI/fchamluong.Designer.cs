@@ -36,6 +36,11 @@
             this.lblcvchamluong = new System.Windows.Forms.Label();
             this.lblnvnhanluong = new System.Windows.Forms.Label();
             this.gbttchamluong = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblngaylam = new System.Windows.Forms.Label();
             this.btnviewcl = new System.Windows.Forms.Button();
             this.lbltongtienluong = new System.Windows.Forms.Label();
             this.numlcb = new System.Windows.Forms.NumericUpDown();
@@ -50,7 +55,6 @@
             this.lblclchamluong = new System.Windows.Forms.Label();
             this.cbbclchamluong = new System.Windows.Forms.ComboBox();
             this.cbbcvchamluong = new System.Windows.Forms.ComboBox();
-            this.lblngaylam = new System.Windows.Forms.Label();
             this.gbcnchamluong.SuspendLayout();
             this.gbttchamluong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numlcb)).BeginInit();
@@ -117,6 +121,10 @@
             // 
             // gbttchamluong
             // 
+            this.gbttchamluong.Controls.Add(this.label2);
+            this.gbttchamluong.Controls.Add(this.dateTimePicker2);
+            this.gbttchamluong.Controls.Add(this.label1);
+            this.gbttchamluong.Controls.Add(this.dateTimePicker1);
             this.gbttchamluong.Controls.Add(this.lblngaylam);
             this.gbttchamluong.Controls.Add(this.btnviewcl);
             this.gbttchamluong.Controls.Add(this.lbltongtienluong);
@@ -137,10 +145,53 @@
             this.gbttchamluong.Controls.Add(this.lblcvchamluong);
             this.gbttchamluong.Location = new System.Drawing.Point(12, 74);
             this.gbttchamluong.Name = "gbttchamluong";
-            this.gbttchamluong.Size = new System.Drawing.Size(456, 348);
+            this.gbttchamluong.Size = new System.Drawing.Size(456, 371);
             this.gbttchamluong.TabIndex = 0;
             this.gbttchamluong.TabStop = false;
             this.gbttchamluong.Text = "Thông tin ca làm nhân viên";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(249, 157);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Ngày cuối";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(310, 153);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker2.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Ngày đầu";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(78, 153);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(124, 20);
+            this.dateTimePicker1.TabIndex = 38;
+            // 
+            // lblngaylam
+            // 
+            this.lblngaylam.AutoSize = true;
+            this.lblngaylam.Location = new System.Drawing.Point(15, 193);
+            this.lblngaylam.Name = "lblngaylam";
+            this.lblngaylam.Size = new System.Drawing.Size(51, 13);
+            this.lblngaylam.TabIndex = 37;
+            this.lblngaylam.Text = "Ngày làm";
             // 
             // btnviewcl
             // 
@@ -158,7 +209,7 @@
             // 
             this.lbltongtienluong.BackColor = System.Drawing.SystemColors.Info;
             this.lbltongtienluong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbltongtienluong.Location = new System.Drawing.Point(78, 304);
+            this.lbltongtienluong.Location = new System.Drawing.Point(77, 329);
             this.lbltongtienluong.Name = "lbltongtienluong";
             this.lbltongtienluong.Size = new System.Drawing.Size(146, 20);
             this.lbltongtienluong.TabIndex = 36;
@@ -195,7 +246,7 @@
             // 
             this.lbltrangthainhanluong.BackColor = System.Drawing.SystemColors.Info;
             this.lbltrangthainhanluong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbltrangthainhanluong.Location = new System.Drawing.Point(291, 304);
+            this.lbltrangthainhanluong.Location = new System.Drawing.Point(290, 329);
             this.lbltrangthainhanluong.Name = "lbltrangthainhanluong";
             this.lbltrangthainhanluong.Size = new System.Drawing.Size(133, 20);
             this.lbltrangthainhanluong.TabIndex = 31;
@@ -205,7 +256,7 @@
             // lbldvluong
             // 
             this.lbldvluong.AutoSize = true;
-            this.lbldvluong.Location = new System.Drawing.Point(230, 308);
+            this.lbldvluong.Location = new System.Drawing.Point(229, 333);
             this.lbldvluong.Name = "lbldvluong";
             this.lbldvluong.Size = new System.Drawing.Size(30, 13);
             this.lbldvluong.TabIndex = 30;
@@ -214,7 +265,7 @@
             // lbltienchamluong
             // 
             this.lbltienchamluong.AutoSize = true;
-            this.lbltienchamluong.Location = new System.Drawing.Point(15, 308);
+            this.lbltienchamluong.Location = new System.Drawing.Point(14, 333);
             this.lbltienchamluong.Name = "lbltienchamluong";
             this.lbltienchamluong.Size = new System.Drawing.Size(57, 13);
             this.lbltienchamluong.TabIndex = 12;
@@ -227,6 +278,19 @@
             this.cbbthangchamluong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbthangchamluong.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbbthangchamluong.FormattingEnabled = true;
+            this.cbbthangchamluong.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.cbbthangchamluong.Location = new System.Drawing.Point(310, 116);
             this.cbbthangchamluong.Name = "cbbthangchamluong";
             this.cbbthangchamluong.Size = new System.Drawing.Size(133, 21);
@@ -279,7 +343,7 @@
             "Ngày 29",
             "Ngày 30",
             "Ngày 31"});
-            this.chlbngaychamluong.Location = new System.Drawing.Point(78, 161);
+            this.chlbngaychamluong.Location = new System.Drawing.Point(78, 193);
             this.chlbngaychamluong.MultiColumn = true;
             this.chlbngaychamluong.Name = "chlbngaychamluong";
             this.chlbngaychamluong.Size = new System.Drawing.Size(365, 120);
@@ -317,22 +381,13 @@
             this.cbbcvchamluong.Size = new System.Drawing.Size(170, 21);
             this.cbbcvchamluong.TabIndex = 1;
             // 
-            // lblngaylam
-            // 
-            this.lblngaylam.AutoSize = true;
-            this.lblngaylam.Location = new System.Drawing.Point(16, 161);
-            this.lblngaylam.Name = "lblngaylam";
-            this.lblngaylam.Size = new System.Drawing.Size(51, 13);
-            this.lblngaylam.TabIndex = 37;
-            this.lblngaylam.Text = "Ngày làm";
-            // 
             // fchamluong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(482, 434);
+            this.ClientSize = new System.Drawing.Size(482, 457);
             this.Controls.Add(this.gbttchamluong);
             this.Controls.Add(this.gbcnchamluong);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -372,5 +427,9 @@
         private System.Windows.Forms.Button btnviewcl;
         private System.Windows.Forms.Button btnbangluong;
         private System.Windows.Forms.Label lblngaylam;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

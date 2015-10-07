@@ -40,6 +40,9 @@ namespace QLBanHang
         {
             dataload();
             cvload();
+            dtgdsnv.AutoGenerateColumns = false;
+            dtgdsnv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dtgdsnv.ClearSelection();
         }
 
         #region Lấy dữ liệu từ Control
@@ -65,7 +68,7 @@ namespace QLBanHang
                 laygiatri.Sdtnv = txtsdtnv.Text;
                 laygiatri.Ngayvaolam = dtngayvaolam.Text;
                 laygiatri.Idcv = Convert.ToInt16(cbbcvnv.SelectedValue.ToString());
-                laygiatri.Anhnv = picanhnv.Image.ToString();
+                laygiatri.Anhnv = stranh;
 
                 #region
                 //StringBuilder strbuil = new StringBuilder();
@@ -126,6 +129,14 @@ namespace QLBanHang
             txtsdtnv.Text = dtgdsnv.CurrentRow.Cells["sdtnv"].Value.ToString();
             dtngayvaolam.Text = dtgdsnv.CurrentRow.Cells["ngayvaolam"].Value.ToString();
             cbbcvnv.Text = dtgdsnv.CurrentRow.Cells["idcv"].Value.ToString();
+            if (!string.IsNullOrEmpty(Convert.ToString(dtgdsnv.CurrentRow.Cells["anhnv"].Value)))
+            {
+                picanhnv.Image = Image.FromFile(dtgdsnv.CurrentRow.Cells["anhnv"].Value.ToString());
+            }
+            else
+            {
+                picanhnv.Image = null;
+            }
         }
 
         private void dtgdsnv_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -140,7 +151,7 @@ namespace QLBanHang
             {
                 dtgdsnv.DataSource = data.showtable();
 
-                for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
+                for (int i = 0; i < dtgdsnv.Rows.Count; i++)
                 {
                     dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
 
@@ -164,7 +175,17 @@ namespace QLBanHang
 
         public void addtable()
         {
-            data.addtable(laygiatri.Tennv, laygiatri.Ngaysinhnv, laygiatri.Gioitinhnv, laygiatri.Cmndnv, laygiatri.Diachinv, laygiatri.Emailnv, laygiatri.Sdtnv, laygiatri.Ngayvaolam, laygiatri.Idcv);
+            data.addtable(
+                laygiatri.Tennv, 
+                laygiatri.Ngaysinhnv, 
+                laygiatri.Gioitinhnv, 
+                laygiatri.Cmndnv, 
+                laygiatri.Diachinv, 
+                laygiatri.Emailnv, 
+                laygiatri.Sdtnv, 
+                laygiatri.Ngayvaolam, 
+                laygiatri.Idcv,
+                laygiatri.Anhnv);
             datarenew();
         }
 
@@ -211,7 +232,7 @@ namespace QLBanHang
         {
             getData();
             laygiatri.Idnv = int.Parse(dtgdsnv.CurrentRow.Cells["idnv"].Value.ToString());
-            data.editrow(laygiatri.Tennv, laygiatri.Ngaysinhnv, laygiatri.Gioitinhnv, laygiatri.Cmndnv, laygiatri.Diachinv, laygiatri.Emailnv, laygiatri.Sdtnv, laygiatri.Ngayvaolam, laygiatri.Idcv, laygiatri.Idnv);
+            data.editrow(laygiatri.Tennv, laygiatri.Ngaysinhnv, laygiatri.Gioitinhnv, laygiatri.Cmndnv, laygiatri.Diachinv, laygiatri.Emailnv, laygiatri.Sdtnv, laygiatri.Ngayvaolam, laygiatri.Idcv, laygiatri.Idnv,laygiatri.Anhnv);
             
         }
         private void btneditnv_Click(object sender, EventArgs e)
@@ -233,7 +254,7 @@ namespace QLBanHang
 
         private void dtgdsnv_Sorted(object sender, EventArgs e)
         {
-            for (int i = 0; i < dtgdsnv.Rows.Count - 1; i++)
+            for (int i = 0; i < dtgdsnv.Rows.Count; i++)
             {
                 dtgdsnv.Rows[i].Cells["stt"].Value = i + 1;
 
@@ -273,6 +294,48 @@ namespace QLBanHang
         private void btnrefreshnv_Click(object sender, EventArgs e)
         {
             datarenew();
+        }
+
+        private void dtgdsnv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //if (e.ColumnIndex == 1)
+            //{
+            //    if (e.Value is bool)
+            //    {
+            //        bool value = (bool)e.Value;
+            //        e.Value = (value) ? "Nam" : "Nữ";
+            //        e.FormattingApplied = true;
+            //    }
+            //}
+        }
+
+        string stranh;
+
+        private void btnchonanhnv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.FileName = "Image";
+
+                string fileanh = open.FileName;
+                open.DefaultExt = ".jpg";
+                open.Filter = "JPG|*.jpg|PNG|*.png|GIF|*.gif"; //"Image (.jpg)|*.jpg"; 
+                open.InitialDirectory = @"D:\";
+
+                if (string.IsNullOrEmpty(fileanh))
+                    return;
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    picanhnv.Image = Image.FromFile(open.FileName);
+                }
+                stranh = open.FileName;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
     }
 }

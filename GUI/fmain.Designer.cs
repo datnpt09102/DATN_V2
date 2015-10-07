@@ -97,6 +97,7 @@
             // picphanquyen
             // 
             this.picphanquyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picphanquyen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picphanquyen.Image = global::QLBanHang.Properties.Resources.setup;
             this.picphanquyen.ImageLocation = "";
             this.picphanquyen.Location = new System.Drawing.Point(27, 25);
@@ -174,6 +175,7 @@
             // picncc
             // 
             this.picncc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picncc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picncc.Image = global::QLBanHang.Properties.Resources.buy;
             this.picncc.ImageLocation = "";
             this.picncc.Location = new System.Drawing.Point(484, 29);
@@ -188,6 +190,7 @@
             // picmh
             // 
             this.picmh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picmh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picmh.Image = global::QLBanHang.Properties.Resources.products;
             this.picmh.ImageLocation = "";
             this.picmh.Location = new System.Drawing.Point(335, 29);
@@ -202,6 +205,7 @@
             // picnv
             // 
             this.picnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picnv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picnv.Image = global::QLBanHang.Properties.Resources.preferences_contact_list;
             this.picnv.ImageLocation = "";
             this.picnv.Location = new System.Drawing.Point(186, 29);
@@ -216,6 +220,7 @@
             // pickh
             // 
             this.pickh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pickh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pickh.Image = global::QLBanHang.Properties.Resources.guest;
             this.pickh.ImageLocation = "";
             this.pickh.Location = new System.Drawing.Point(37, 29);
@@ -256,6 +261,7 @@
             // picthongke
             // 
             this.picthongke.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picthongke.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picthongke.Image = global::QLBanHang.Properties.Resources.analytics;
             this.picthongke.ImageLocation = "";
             this.picthongke.Location = new System.Drawing.Point(325, 25);
@@ -292,6 +298,7 @@
             // picbanhang
             // 
             this.picbanhang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picbanhang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picbanhang.Image = global::QLBanHang.Properties.Resources.Package_Download;
             this.picbanhang.ImageLocation = "";
             this.picbanhang.Location = new System.Drawing.Point(178, 25);
@@ -306,6 +313,7 @@
             // picnhaphang
             // 
             this.picnhaphang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picnhaphang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picnhaphang.Image = global::QLBanHang.Properties.Resources.Sales_by_Payment;
             this.picnhaphang.ImageLocation = "";
             this.picnhaphang.Location = new System.Drawing.Point(31, 25);

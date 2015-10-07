@@ -31,7 +31,6 @@ namespace DAL
                 ///mở kết nối
                 ketnoiden.Open();
 
-
                 ///thực hiện việc đọc dữ liệu từ Database
                 SqlDataAdapter da = new SqlDataAdapter(caulenh, ketnoiden);
 

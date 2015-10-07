@@ -35,7 +35,6 @@
             this.btnsavehdban = new System.Windows.Forms.Button();
             this.btnaddhdban = new System.Windows.Forms.Button();
             this.btndshdban = new System.Windows.Forms.Button();
-            this.btnprinthdban = new System.Windows.Forms.Button();
             this.gbthongtinhdban = new System.Windows.Forms.GroupBox();
             this.lbltienhdban = new System.Windows.Forms.Label();
             this.lblphantramthue = new System.Windows.Forms.Label();
@@ -73,6 +72,9 @@
             this.txttenmhban = new System.Windows.Forms.TextBox();
             this.lbltenmhhdban = new System.Windows.Forms.Label();
             this.dtgdsmhhdban = new System.Windows.Forms.DataGridView();
+            this.sttmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbchitiethdban = new System.Windows.Forms.GroupBox();
             this.dtgchitiethdban = new System.Windows.Forms.DataGridView();
             this.sttchitiethdban = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,10 +84,6 @@
             this.tongtienchitiethdban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giamhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thuemhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sttmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongmhban = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbchucnanghdban.SuspendLayout();
             this.gbthongtinhdban.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numthuehdban)).BeginInit();
@@ -105,7 +103,6 @@
             this.gbchucnanghdban.Controls.Add(this.btnsavehdban);
             this.gbchucnanghdban.Controls.Add(this.btnaddhdban);
             this.gbchucnanghdban.Controls.Add(this.btndshdban);
-            this.gbchucnanghdban.Controls.Add(this.btnprinthdban);
             this.gbchucnanghdban.Location = new System.Drawing.Point(375, 12);
             this.gbchucnanghdban.Name = "gbchucnanghdban";
             this.gbchucnanghdban.Size = new System.Drawing.Size(111, 330);
@@ -117,7 +114,7 @@
             // 
             this.btnrefreshhdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrefreshhdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnrefreshhdban.Location = new System.Drawing.Point(18, 171);
+            this.btnrefreshhdban.Location = new System.Drawing.Point(18, 150);
             this.btnrefreshhdban.Name = "btnrefreshhdban";
             this.btnrefreshhdban.Size = new System.Drawing.Size(75, 26);
             this.btnrefreshhdban.TabIndex = 5;
@@ -128,7 +125,7 @@
             // 
             this.btncancelhdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancelhdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btncancelhdban.Location = new System.Drawing.Point(18, 79);
+            this.btncancelhdban.Location = new System.Drawing.Point(18, 96);
             this.btncancelhdban.Name = "btncancelhdban";
             this.btncancelhdban.Size = new System.Drawing.Size(75, 26);
             this.btncancelhdban.TabIndex = 1;
@@ -139,7 +136,7 @@
             // 
             this.btnsavehdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsavehdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnsavehdban.Location = new System.Drawing.Point(18, 284);
+            this.btnsavehdban.Location = new System.Drawing.Point(18, 204);
             this.btnsavehdban.Name = "btnsavehdban";
             this.btnsavehdban.Size = new System.Drawing.Size(75, 26);
             this.btnsavehdban.TabIndex = 4;
@@ -150,35 +147,25 @@
             // 
             this.btnaddhdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnaddhdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnaddhdban.Location = new System.Drawing.Point(18, 33);
+            this.btnaddhdban.Location = new System.Drawing.Point(18, 42);
             this.btnaddhdban.Name = "btnaddhdban";
             this.btnaddhdban.Size = new System.Drawing.Size(75, 26);
             this.btnaddhdban.TabIndex = 0;
             this.btnaddhdban.Text = "Tạo";
             this.btnaddhdban.UseVisualStyleBackColor = true;
+            this.btnaddhdban.Click += new System.EventHandler(this.btnaddhdban_Click);
             // 
             // btndshdban
             // 
             this.btndshdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndshdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btndshdban.Location = new System.Drawing.Point(18, 217);
+            this.btndshdban.Location = new System.Drawing.Point(18, 258);
             this.btndshdban.Name = "btndshdban";
             this.btndshdban.Size = new System.Drawing.Size(75, 47);
             this.btndshdban.TabIndex = 3;
             this.btndshdban.Text = "Danh sách hóa đơn";
             this.btndshdban.UseVisualStyleBackColor = true;
-            //this.btndshdban.Click += new System.EventHandler(this.btndshdban_Click);
-            // 
-            // btnprinthdban
-            // 
-            this.btnprinthdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprinthdban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnprinthdban.Location = new System.Drawing.Point(18, 125);
-            this.btnprinthdban.Name = "btnprinthdban";
-            this.btnprinthdban.Size = new System.Drawing.Size(75, 26);
-            this.btnprinthdban.TabIndex = 2;
-            this.btnprinthdban.Text = "Xuất";
-            this.btnprinthdban.UseVisualStyleBackColor = true;
+            this.btndshdban.Click += new System.EventHandler(this.btndshdban_Click);
             // 
             // gbthongtinhdban
             // 
@@ -469,6 +456,9 @@
             this.cbbtrangthaihdban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.cbbtrangthaihdban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbtrangthaihdban.FormattingEnabled = true;
+            this.cbbtrangthaihdban.Items.AddRange(new object[] {
+            "Đã thanh toán",
+            "Chưa thanh toán"});
             this.cbbtrangthaihdban.Location = new System.Drawing.Point(419, 215);
             this.cbbtrangthaihdban.Name = "cbbtrangthaihdban";
             this.cbbtrangthaihdban.Size = new System.Drawing.Size(111, 21);
@@ -493,7 +483,7 @@
             this.btnaddkhhdban.TabIndex = 1;
             this.btnaddkhhdban.Text = "Thêm";
             this.btnaddkhhdban.UseVisualStyleBackColor = true;
-            //this.btnaddkhhdban.Click += new System.EventHandler(this.btnaddkhhdban_Click);
+            this.btnaddkhhdban.Click += new System.EventHandler(this.btnaddkhhdban_Click);
             // 
             // lbldvgiahdban
             // 
@@ -629,6 +619,29 @@
             this.dtgdsmhhdban.Size = new System.Drawing.Size(345, 466);
             this.dtgdsmhhdban.TabIndex = 2;
             // 
+            // sttmhban
+            // 
+            this.sttmhban.HeaderText = "STT";
+            this.sttmhban.Name = "sttmhban";
+            this.sttmhban.ReadOnly = true;
+            this.sttmhban.Width = 52;
+            // 
+            // tenmhban
+            // 
+            this.tenmhban.DataPropertyName = "tenmh";
+            this.tenmhban.HeaderText = "Tên mặt hàng";
+            this.tenmhban.Name = "tenmhban";
+            this.tenmhban.ReadOnly = true;
+            this.tenmhban.Width = 97;
+            // 
+            // soluongmhban
+            // 
+            this.soluongmhban.DataPropertyName = "soluong";
+            this.soluongmhban.HeaderText = "Số lượng";
+            this.soluongmhban.Name = "soluongmhban";
+            this.soluongmhban.ReadOnly = true;
+            this.soluongmhban.Width = 73;
+            // 
             // gbchitiethdban
             // 
             this.gbchitiethdban.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -645,6 +658,7 @@
             // dtgchitiethdban
             // 
             this.dtgchitiethdban.AllowUserToAddRows = false;
+            this.dtgchitiethdban.AllowUserToDeleteRows = false;
             this.dtgchitiethdban.AllowUserToResizeRows = false;
             this.dtgchitiethdban.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -662,8 +676,7 @@
             this.soluongchitiethdban,
             this.tongtienchitiethdban,
             this.giamhban,
-            this.dvmhban,
-            this.thuemhban});
+            this.dvmhban});
             this.dtgchitiethdban.EnableHeadersVisualStyles = false;
             this.dtgchitiethdban.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.dtgchitiethdban.Location = new System.Drawing.Point(6, 19);
@@ -728,36 +741,6 @@
             this.dvmhban.ReadOnly = true;
             this.dvmhban.Width = 84;
             // 
-            // thuemhban
-            // 
-            this.thuemhban.HeaderText = "Thuế VAT";
-            this.thuemhban.Name = "thuemhban";
-            this.thuemhban.ReadOnly = true;
-            this.thuemhban.Width = 80;
-            // 
-            // sttmhban
-            // 
-            this.sttmhban.HeaderText = "STT";
-            this.sttmhban.Name = "sttmhban";
-            this.sttmhban.ReadOnly = true;
-            this.sttmhban.Width = 52;
-            // 
-            // tenmhban
-            // 
-            this.tenmhban.DataPropertyName = "tenmh";
-            this.tenmhban.HeaderText = "Tên mặt hàng";
-            this.tenmhban.Name = "tenmhban";
-            this.tenmhban.ReadOnly = true;
-            this.tenmhban.Width = 97;
-            // 
-            // soluongmhban
-            // 
-            this.soluongmhban.DataPropertyName = "soluong";
-            this.soluongmhban.HeaderText = "Số lượng";
-            this.soluongmhban.Name = "soluongmhban";
-            this.soluongmhban.ReadOnly = true;
-            this.soluongmhban.Width = 73;
-            // 
             // fbanhang
             // 
             this.AcceptButton = this.btnaddhdban;
@@ -774,7 +757,7 @@
             this.Name = "fbanhang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bán hàng";
-            //this.Load += new System.EventHandler(this.fbanhang_Load);
+            this.Load += new System.EventHandler(this.fbanhang_Load);
             this.gbchucnanghdban.ResumeLayout(false);
             this.gbthongtinhdban.ResumeLayout(false);
             this.gbthongtinhdban.PerformLayout();
@@ -798,7 +781,6 @@
         private System.Windows.Forms.Button btndshdban;
         private System.Windows.Forms.GroupBox gbthongtinhdban;
         private System.Windows.Forms.ComboBox cbbloaimhban;
-        private System.Windows.Forms.Button btnprinthdban;
         private System.Windows.Forms.Label lblloaimhhdban;
         private System.Windows.Forms.Label lbldvgiahdban;
         private System.Windows.Forms.ComboBox cbbkhhdban;
@@ -849,6 +831,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tongtienchitiethdban;
         private System.Windows.Forms.DataGridViewTextBoxColumn giamhban;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvmhban;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thuemhban;
     }
 }

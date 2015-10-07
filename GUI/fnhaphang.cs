@@ -36,22 +36,66 @@ namespace QLBanHang
             frm.ShowDialog();
         }
 
-        
+        chitiethdnhapBUS data = new chitiethdnhapBUS();
+        chitiethdnhapDTO laygiatri = new chitiethdnhapDTO();
 
         private void fnhaphang_Load(object sender, EventArgs e)
         {
-            //dataload();
+            dataload();
+            loaimhload();
         }
 
-        //private void dataload()
-        //{
-        //    // Đổ dữ liệu vào DataGridView
-        //    dtgdschitiethdnhap.DataSource = data.showtable();
-        //    // Số thứ tự tăng tự động
-        //    for (int i = 0; i < dtgdschitiethdnhap.Rows.Count; i++)
-        //    {
-        //        dtgdschitiethdnhap.Rows[i].Cells[0].Value = i + 1;
-        //    }
-        //}
+        public void loaimhload()
+        {
+            cbbloaimhhdnhap.DataSource = data.getloaimh();
+            cbbloaimhhdnhap.DisplayMember = "tenloaimh";
+        }
+
+        private void dataload()
+        {
+            // Đổ dữ liệu vào DataGridView
+            dtgdsmhnhap.DataSource = data.gettablemh();
+            // Số thứ tự tăng tự động
+            for (int i = 0; i < dtgdsmhnhap.Rows.Count; i++)
+            {
+                dtgdsmhnhap.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+
+        public void chitietload(int i)
+        {
+
+            
+
+            //MessageBox.Show(laygiatri.Idmh.ToString() + laygiatri.Soluongnhap.ToString());
+            
+            //for (int i = 0; dtgdschitiethdnhap.Rows.Count > i; i++)
+            //{
+            //    do
+            //    {
+                   
+                    dtgdschitiethdnhap.Rows.Add();
+                    dtgdschitiethdnhap.Rows[i].Cells["tenmhnhap"].Value = laygiatri.Idmh;
+                    dtgdschitiethdnhap.Rows[i].Cells["soluongmhnhap"].Value = laygiatri.Soluongnhap;
+                    
+            //    }
+            //    while (dtgdschitiethdnhap.Rows.Count > i);               
+            //}
+        }
+        int i = 0;
+        private void dtgdsmhnhap_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                laygiatri.Idmh = int.Parse(dtgdsmhnhap.CurrentRow.Cells["idmhnhap"].Value.ToString());
+                laygiatri.Soluongnhap = int.Parse(dtgdsmhnhap.CurrentRow.Cells["soluongnhap"].Value.ToString());
+                chitietload(i);
+                i += 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

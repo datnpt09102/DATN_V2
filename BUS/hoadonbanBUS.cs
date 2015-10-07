@@ -10,6 +10,7 @@ namespace BUS
     public class hoadonbanBUS
     {
         ConnectDAL ketnoi = new ConnectDAL();
+
         public DataTable showtable()
         {
             DataTable dt = ketnoi.laydulieu("");
@@ -26,6 +27,24 @@ namespace BUS
         public void editrow()
         {
             ketnoi.thucthisql("");
+        }
+
+        public DataTable gettablemh()
+        {
+            DataTable dt = ketnoi.laydulieu("SELECT tenmh, soluong FROM mathang");
+            return dt;
+        }
+
+        public DataTable gettableloaimh()
+        {
+            DataTable dt = ketnoi.laydulieu("SELECT * FROM loaimathang");
+            return dt;
+        }
+
+        public DataTable gettablekh()
+        {
+            DataTable dt = ketnoi.laydulieu("SELECT hotenkh FROM khachhang");
+            return dt;
         }
     }
 }
